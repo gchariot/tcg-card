@@ -1,0 +1,567 @@
+{
+  "metadata": {
+    "title": "CARTATTAC - Expertise professionnelle cartes TCG",
+    "description": "Expertise professionnelle pour cartes à collectionner TCG. Pokémon, One Piece, Dragon Ball, Magic, Lorcana. Authentification, évaluation, assurance."
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "methodology": "Méthodologie",
+    "individuals": "Particuliers",
+    "professionals": "Professionnels",
+    "blog": "Blog",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Expertise professionnelle",
+    "titleLine2": "cartes à collectionner",
+    "subtitle": "Méthodologie rigoureuse • Analyse objective • Totale indépendance",
+    "cta": {
+      "individuals": "Particuliers",
+      "professionals": "Professionnels"
+    }
+  },
+  "services": {
+    "title": "Nos services",
+    "subtitle": "Des prestations adaptées aux collectionneurs comme aux professionnels.",
+    "individual": {
+      "title": "Expertise de carte individuelle",
+      "description": "Analyse approfondie de l'authenticité, de l'état et de la valeur de marché d'une carte.",
+      "details": [
+        "Vérification de l'authenticité",
+        "Évaluation de la condition selon standards internationaux",
+        "Estimation de la valeur de marché",
+        "Rapport détaillé et documenté"
+      ]
+    },
+    "inventory": {
+      "title": "Inventaire et valorisation de collection",
+      "description": "Évaluation structurée des collections, identification des pièces majeures et estimation globale.",
+      "details": [
+        "Inventaire complet de la collection",
+        "Identification des pièces à forte valeur",
+        "Estimation globale documentée",
+        "Classification par catégories"
+      ]
+    },
+    "insurance": {
+      "title": "Évaluation pour assurance",
+      "description": "Estimer la valeur de remplacement pour assurer correctement vos cartes.",
+      "details": [
+        "Valeur de remplacement calculée",
+        "Documentation acceptée par les assureurs",
+        "Mise à jour périodique possible",
+        "Certificat officiel"
+      ]
+    },
+    "damage": {
+      "title": "Expertise après sinistre",
+      "description": "Intervention suite à vol, perte ou dommage afin d'établir la valeur des biens concernés.",
+      "details": [
+        "Évaluation des pertes",
+        "Documentation pour indemnisation",
+        "Rapport détaillé pour assurance",
+        "Intervention rapide"
+      ]
+    },
+    "authentication": {
+      "title": "Authentification et détection de contrefaçons",
+      "description": "Analyse technique visant à identifier les faux et sécuriser les transactions.",
+      "details": [
+        "Analyse de la trame d'impression",
+        "Contrôle sous lumière UV",
+        "Comparaison avec exemplaires authentiques",
+        "Certificat d'authenticité"
+      ]
+    },
+    "whyExpertise": {
+      "title": "Pourquoi une expertise est essentielle ?",
+      "protection": {
+        "title": "Protection contre le vol et les sinistres",
+        "description": "En cas de vol, incendie ou dégât des eaux, une expertise documentée facilite l'indemnisation et permet de prouver la valeur réelle des biens."
+      },
+      "insurance": {
+        "title": "Exigence des assurances",
+        "description": "De nombreuses compagnies d'assurance demandent une évaluation préalable pour couvrir correctement les objets de collection."
+      },
+      "patrimony": {
+        "title": "Valorisation patrimoniale",
+        "description": "Une expertise permet d'établir la valeur réelle de votre collection et de l'intégrer dans votre patrimoine global."
+      },
+      "authentication": {
+        "title": "Authentification et sécurité",
+        "description": "Le marché des cartes connaît une hausse des contrefaçons. L'expertise permet d'authentifier les cartes et de sécuriser vos acquisitions."
+      }
+    },
+    "cta": {
+      "title": "Prêt à faire expertiser votre collection ?",
+      "description": "Contactez-nous pour obtenir un devis personnalisé. Expertise réalisée en toute indépendance et confidentialité.",
+      "button": "Demander un devis"
+    }
+  },
+  "individuals": {
+    "title": "Expertise pour collectionneurs",
+    "subtitle": "Vous êtes collectionneur ou investisseur ? Faites évaluer vos cartes par un expert indépendant pour les assurer, les vendre ou les intégrer à votre patrimoine.",
+    "useCases": {
+      "title": "Dans quels cas faire appel à nous ?",
+      "insurance": {
+        "title": "Assurance de votre collection",
+        "description": "Obtenez une évaluation documentée acceptée par les compagnies d'assurance pour protéger correctement vos cartes."
+      },
+      "damage": {
+        "title": "Expertise après sinistre",
+        "description": "En cas de vol, incendie ou dégât des eaux, nous établissons la valeur des biens pour faciliter l'indemnisation."
+      },
+      "inheritance": {
+        "title": "Succession et héritage",
+        "description": "Inventaire et valorisation de collection dans le cadre de successions, partages ou donations."
+      },
+      "patrimony": {
+        "title": "Valorisation patrimoniale",
+        "description": "Intégrez votre collection à votre patrimoine global avec une évaluation professionnelle et documentée."
+      },
+      "transaction": {
+        "title": "Achat ou vente",
+        "description": "Sécurisez vos transactions avec une authentification et une estimation de valeur avant achat ou vente."
+      }
+    },
+    "benefits": {
+      "title": "Pourquoi choisir CARTATTAC ?",
+      "items": [
+        "Méthodologie rigoureuse en 6 étapes",
+        "Indépendance totale (aucune vente de cartes)",
+        "Rapport détaillé et documenté",
+        "Expertise multi-TCG (Pokémon, One Piece, Dragon Ball, Magic, Lorcana)",
+        "Analyse basée sur les données de marché actuelles",
+        "Certificat officiel pour vos démarches"
+      ]
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": [
+        {
+          "question": "Comment se déroule une expertise ?",
+          "answer": "L'expertise suit notre méthodologie en 6 étapes : identification de la carte, authentification, évaluation de l'état, analyse de la rareté, analyse du marché, et détermination des valeurs. Vous recevez un rapport complet à l'issue du processus."
+        },
+        {
+          "question": "Combien de cartes puis-je faire expertiser ?",
+          "answer": "Nous proposons des expertises individuelles pour une carte précieuse comme des inventaires complets pour des collections de plusieurs centaines de cartes. Le tarif est adapté au volume."
+        },
+        {
+          "question": "Mon assurance acceptera-t-elle votre expertise ?",
+          "answer": "Oui, nos rapports sont conçus pour être acceptés par les compagnies d'assurance. Ils contiennent toutes les informations nécessaires : identification précise, état documenté, et valeur de remplacement justifiée."
+        },
+        {
+          "question": "Quels TCG expertisez-vous ?",
+          "answer": "Nous couvrons les principaux jeux de cartes à collectionner : Pokémon, One Piece, Dragon Ball, Magic: The Gathering, et Disney Lorcana."
+        },
+        {
+          "question": "Combien coûte une expertise ?",
+          "answer": "Le tarif dépend du type de prestation (carte individuelle, collection, urgence) et du volume. Contactez-nous pour un devis personnalisé et gratuit."
+        },
+        {
+          "question": "Dois-je envoyer mes cartes ?",
+          "answer": "Selon le type d'expertise, nous pouvons nous déplacer ou vous demander d'envoyer vos cartes de manière sécurisée. Les modalités sont définies lors de l'établissement du devis."
+        },
+        {
+          "question": "Quelle est la différence entre expertise et grading ?",
+          "answer": "Le grading (PSA, BGS) certifie l'état et l'authenticité d'une carte dans un boîtier scellé. Notre expertise fournit une analyse complète avec valeur de marché, idéale pour l'assurance, la succession ou la vente, sans modification physique de la carte."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prêt à faire expertiser votre collection ?",
+      "description": "Demandez un devis gratuit et sans engagement. Nous vous recontactons sous 48h.",
+      "button": "Demander un devis gratuit"
+    }
+  },
+  "professionals": {
+    "title": "Expertise pour professionnels",
+    "subtitle": "Assurances, notaires, maisons de vente, boutiques spécialisées : bénéficiez d'évaluations fiables et de rapports documentés pour vos activités.",
+    "domains": {
+      "title": "Domaines d'intervention",
+      "insurance": {
+        "title": "Assurances et courtiers",
+        "description": "Évaluations pour souscription de contrats, expertise contradictoire en cas de sinistre, détermination des valeurs de remplacement.",
+        "services": [
+          "Évaluation pré-sinistre",
+          "Expertise post-sinistre",
+          "Valeur de remplacement",
+          "Rapport détaillé pour indemnisation"
+        ]
+      },
+      "notary": {
+        "title": "Notaires et avocats",
+        "description": "Inventaires et valorisations dans le cadre de successions, partages, divorces ou liquidations de patrimoine.",
+        "services": [
+          "Inventaire successoral",
+          "Évaluation pour partage",
+          "Attestation de valeur",
+          "Expertise contradictoire"
+        ]
+      },
+      "auction": {
+        "title": "Maisons de vente aux enchères",
+        "description": "Estimations professionnelles pour catalogues de vente, authentification des lots, conseil sur les réserves.",
+        "services": [
+          "Estimation pré-vente",
+          "Authentification des lots",
+          "Conseil sur les réserves",
+          "Description catalogue"
+        ]
+      },
+      "shop": {
+        "title": "Boutiques et marchands TCG",
+        "description": "Authentification de stock, évaluation de rachats de collections, expertise pour transactions importantes.",
+        "services": [
+          "Authentification de stock",
+          "Détection de contrefaçons",
+          "Évaluation de rachat",
+          "Formation équipes"
+        ]
+      }
+    },
+    "deliverables": {
+      "title": "Livrables fournis",
+      "report": {
+        "title": "Rapport d'expertise complet",
+        "description": "Document détaillé incluant méthodologie, analyses, photos, et conclusions avec valeurs justifiées."
+      },
+      "certificate": {
+        "title": "Certificat d'authenticité",
+        "description": "Attestation officielle confirmant l'authenticité des cartes expertisées."
+      },
+      "inventory": {
+        "title": "Inventaire valorisé",
+        "description": "Liste exhaustive des pièces avec identification, état, et valeur unitaire et globale."
+      },
+      "photos": {
+        "title": "Documentation photographique",
+        "description": "Photos haute résolution de chaque carte, recto/verso, avec détails pertinents."
+      }
+    },
+    "guarantees": {
+      "title": "Nos garanties",
+      "items": [
+        "Indépendance totale : aucun conflit d'intérêt (pas de vente de cartes)",
+        "Méthodologie rigoureuse et documentée en 6 étapes",
+        "Expertise basée sur les données de marché actualisées",
+        "Confidentialité absolue des informations",
+        "Délais d'intervention adaptés à vos contraintes",
+        "Interlocuteur unique et disponible"
+      ]
+    },
+    "cta": {
+      "title": "Établissons un partenariat",
+      "description": "Discutons de vos besoins spécifiques et de la manière dont nous pouvons vous accompagner dans vos activités professionnelles.",
+      "button": "Nous contacter"
+    }
+  },
+  "methodology": {
+    "title": "Notre méthodologie",
+    "subtitle": "Une approche rigoureuse en 6 étapes pour une expertise fiable et documentée de vos cartes à collectionner.",
+    "steps": {
+      "identification": {
+        "title": "Identification",
+        "description": "Identification précise de la carte : nom, édition, numéro, langue, variante. Vérification dans les bases de données officielles.",
+        "details": [
+          "Référencement dans les bases officielles",
+          "Identification des variantes (1ère édition, holo, reverse...)",
+          "Vérification de la langue et du marché d'origine"
+        ]
+      },
+      "authentication": {
+        "title": "Authentification",
+        "description": "Analyse technique visant à confirmer l'authenticité de la carte et à détecter d'éventuelles contrefaçons.",
+        "details": [
+          "Analyse de la trame d'impression",
+          "Contrôle sous lumière UV",
+          "Comparaison avec exemplaires authentiques",
+          "Vérification des textures et finitions"
+        ]
+      },
+      "condition": {
+        "title": "Évaluation de l'état",
+        "description": "Examen minutieux de l'état de conservation selon les standards internationaux (centering, surface, edges, corners).",
+        "details": [
+          "Centrage (centering)",
+          "État de surface (surface)",
+          "État des bords (edges)",
+          "État des coins (corners)"
+        ]
+      },
+      "rarity": {
+        "title": "Analyse de la rareté",
+        "description": "Évaluation de la rareté de la carte en fonction de son tirage, de sa distribution et de sa disponibilité sur le marché.",
+        "details": [
+          "Tirage et distribution",
+          "Cartes promotionnelles et événements",
+          "Disponibilité sur le marché secondaire",
+          "Historique des ventes"
+        ]
+      },
+      "market": {
+        "title": "Analyse du marché",
+        "description": "Étude des transactions récentes et des tendances de marché pour établir une fourchette de prix réaliste.",
+        "details": [
+          "Analyse des ventes récentes",
+          "Comparaison des plateformes (eBay, Cardmarket...)",
+          "Tendances de marché",
+          "Impact de l'actualité TCG"
+        ]
+      },
+      "valuation": {
+        "title": "Détermination des valeurs",
+        "description": "Établissement des différentes valeurs : valeur de marché, valeur de remplacement pour assurance, valeur à neuf.",
+        "details": [
+          "Valeur de marché actuelle",
+          "Valeur de remplacement (assurance)",
+          "Fourchette de prix justifiée",
+          "Recommandations"
+        ]
+      }
+    },
+    "deliverables": {
+      "title": "Livrables fournis",
+      "report": {
+        "title": "Rapport d'expertise",
+        "description": "Document complet incluant méthodologie, analyses détaillées et conclusions."
+      },
+      "photos": {
+        "title": "Documentation photo",
+        "description": "Photos haute résolution de chaque carte, recto/verso, avec détails."
+      },
+      "certificate": {
+        "title": "Certificat officiel",
+        "description": "Attestation officielle avec numéro unique et signature de l'expert."
+      },
+      "inventory": {
+        "title": "Inventaire valorisé",
+        "description": "Liste exhaustive avec identification, état et valeur de chaque pièce."
+      }
+    },
+    "commitments": {
+      "title": "Nos engagements",
+      "independence": {
+        "title": "Indépendance",
+        "description": "Aucun conflit d'intérêt : nous n'achetons ni ne vendons de cartes."
+      },
+      "objectivity": {
+        "title": "Objectivité",
+        "description": "Analyse basée sur des critères mesurables et des données de marché."
+      },
+      "transparency": {
+        "title": "Transparence",
+        "description": "Méthodologie documentée et justification de chaque conclusion."
+      },
+      "confidentiality": {
+        "title": "Confidentialité",
+        "description": "Vos informations et la composition de votre collection restent strictement confidentielles."
+      }
+    },
+    "cta": {
+      "title": "Convaincu par notre approche ?",
+      "description": "Contactez-nous pour discuter de votre projet d'expertise.",
+      "button": "Demander un devis"
+    }
+  },
+  "about": {
+    "title": "À propos de CARTATTAC",
+    "subtitle": "L'expertise professionnelle au service des collectionneurs et des professionnels.",
+    "story": {
+      "title": "Notre histoire",
+      "paragraphs": [
+        "CARTATTAC est né d'un constat simple : le marché des cartes à collectionner a explosé, mais il manquait un acteur indépendant capable de fournir des expertises fiables et documentées.",
+        "Collectionneurs passionnés depuis notre enfance, nous avons vu le marché évoluer, les prix s'envoler, et avec eux les risques : contrefaçons de plus en plus sophistiquées, difficultés à assurer ses collections, complications lors de successions...",
+        "Face à ces enjeux, nous avons décidé de mettre notre expertise au service de tous : collectionneurs souhaitant protéger leur patrimoine, assureurs ayant besoin d'évaluations fiables, notaires gérant des successions, ou encore maisons de vente cherchant des estimations professionnelles.",
+        "Notre force ? Une totale indépendance. Nous n'achetons ni ne vendons de cartes, ce qui garantit l'objectivité de nos évaluations. Notre seul intérêt est de vous fournir une expertise rigoureuse et documentée."
+      ]
+    },
+    "values": {
+      "title": "Nos valeurs",
+      "independence": {
+        "title": "Indépendance",
+        "description": "Nous n'achetons ni ne vendons de cartes. Notre seul intérêt est de vous fournir une expertise objective et impartiale."
+      },
+      "rigor": {
+        "title": "Rigueur",
+        "description": "Notre méthodologie en 6 étapes garantit une analyse complète et documentée de chaque carte expertisée."
+      },
+      "transparency": {
+        "title": "Transparence",
+        "description": "Chaque conclusion est justifiée et documentée. Vous comprenez exactement comment nous arrivons à nos évaluations."
+      },
+      "passion": {
+        "title": "Passion",
+        "description": "Collectionneurs nous-mêmes, nous partageons votre passion et comprenons l'attachement que vous portez à vos cartes."
+      }
+    },
+    "team": {
+      "title": "L'équipe",
+      "member1": {
+        "name": "Expert 1",
+        "role": "Co-fondateur & Expert TCG",
+        "description": "Collectionneur depuis plus de 15 ans, spécialiste Pokémon et Magic. Passionné par l'authentification et la détection de contrefaçons."
+      },
+      "member2": {
+        "name": "Expert 2",
+        "role": "Co-fondateur & Expert TCG",
+        "description": "Expert en évaluation et analyse de marché. Spécialiste One Piece, Dragon Ball et Lorcana. Passionné par la valorisation patrimoniale."
+      }
+    },
+    "commitments": {
+      "title": "Nos engagements",
+      "items": [
+        "Réponse à votre demande sous 48h",
+        "Devis gratuit et sans engagement",
+        "Confidentialité absolue de vos informations",
+        "Méthodologie rigoureuse et documentée",
+        "Rapports acceptés par les assurances",
+        "Accompagnement personnalisé"
+      ]
+    },
+    "cta": {
+      "title": "Travaillons ensemble",
+      "description": "Vous avez un projet d'expertise ? Contactez-nous pour en discuter.",
+      "button": "Nous contacter"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Demandez un devis gratuit ou posez-nous vos questions. Nous vous répondons sous 48h.",
+    "info": {
+      "title": "Informations de contact",
+      "email": {
+        "title": "Email",
+        "value": "contact@cartattac.fr",
+        "description": "Réponse sous 48h"
+      },
+      "hours": {
+        "title": "Horaires",
+        "value": "Lun - Ven : 9h - 18h",
+        "description": "Hors jours fériés"
+      },
+      "area": {
+        "title": "Zone d'intervention",
+        "value": "France entière",
+        "description": "Déplacement ou envoi sécurisé"
+      }
+    },
+    "form": {
+      "title": "Demande de devis",
+      "description": "Remplissez ce formulaire pour recevoir un devis personnalisé gratuit et sans engagement.",
+      "fields": {
+        "type": {
+          "label": "Vous êtes",
+          "placeholder": "Sélectionnez votre profil",
+          "individual": "Un particulier",
+          "professional": "Un professionnel"
+        },
+        "company": {
+          "label": "Entreprise",
+          "placeholder": "Nom de l'entreprise"
+        },
+        "profession": {
+          "label": "Secteur d'activité",
+          "placeholder": "Sélectionnez",
+          "options": {
+            "insurance": "Assurance / Courtier",
+            "notary": "Notaire / Avocat",
+            "auction": "Maison de vente aux enchères",
+            "shop": "Boutique / Marchand TCG",
+            "other": "Autre"
+          }
+        },
+        "name": {
+          "label": "Nom",
+          "placeholder": "Votre nom"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "votre@email.com"
+        },
+        "phone": {
+          "label": "Téléphone",
+          "placeholder": "06 00 00 00 00",
+          "description": "Optionnel, pour un rappel rapide"
+        },
+        "service": {
+          "label": "Service souhaité",
+          "placeholder": "Sélectionnez",
+          "options": {
+            "individual": "Expertise de carte individuelle",
+            "inventory": "Inventaire et valorisation de collection",
+            "insurance": "Évaluation pour assurance",
+            "damage": "Expertise après sinistre",
+            "authentication": "Authentification",
+            "other": "Autre demande"
+          }
+        },
+        "tcg": {
+          "label": "TCG concerné",
+          "placeholder": "Sélectionnez",
+          "options": {
+            "pokemon": "Pokémon",
+            "onepiece": "One Piece",
+            "dragonball": "Dragon Ball",
+            "magic": "Magic: The Gathering",
+            "lorcana": "Disney Lorcana",
+            "multiple": "Plusieurs TCG",
+            "other": "Autre"
+          }
+        },
+        "volume": {
+          "label": "Volume estimé",
+          "placeholder": "Sélectionnez",
+          "options": {
+            "1-5": "1 à 5 cartes",
+            "6-20": "6 à 20 cartes",
+            "21-100": "21 à 100 cartes",
+            "100+": "Plus de 100 cartes",
+            "collection": "Collection complète"
+          }
+        },
+        "message": {
+          "label": "Votre message",
+          "placeholder": "Décrivez votre projet ou votre demande..."
+        },
+        "consent": {
+          "label": "J'accepte que mes données soient traitées conformément à la",
+          "link": "politique de confidentialité"
+        }
+      },
+      "submit": "Envoyer ma demande",
+      "submitting": "Envoi en cours...",
+      "success": {
+        "title": "Demande envoyée !",
+        "description": "Merci pour votre demande. Nous vous recontacterons sous 48h."
+      },
+      "errors": {
+        "name": "Le nom doit contenir au moins 2 caractères",
+        "email": "Email invalide",
+        "type": "Veuillez sélectionner un type",
+        "tcg": "Veuillez sélectionner un TCG",
+        "volume": "Veuillez estimer le volume",
+        "service": "Veuillez sélectionner un service",
+        "message": "Le message doit contenir au moins 10 caractères",
+        "consent": "Vous devez accepter la politique de confidentialité"
+      }
+    }
+  },
+  "footer": {
+    "description": "Expertise professionnelle pour cartes à collectionner. Méthodologie rigoureuse, analyse objective, totale indépendance.",
+    "navigation": "Navigation",
+    "legal": "Légal",
+    "legalNotice": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "CGV",
+    "followUs": "Suivez-nous",
+    "rights": "Tous droits réservés."
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "requestQuote": "Demander un devis",
+    "contactUs": "Nous contacter"
+  }
+}

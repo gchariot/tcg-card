@@ -1,22 +1,21 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { Link, usePathname } from '@/i18n/routing';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { label: 'Accueil', href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'Méthodologie', href: '/methodologie' },
-  { label: 'Particuliers', href: '/particuliers' },
-  { label: 'Professionnels', href: '/professionnels' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'À propos', href: '/a-propos' },
-];
+  { key: 'home', href: '/' },
+  { key: 'services', href: '/services' },
+  { key: 'methodology', href: '/methodologie' },
+  { key: 'individuals', href: '/particuliers' },
+  { key: 'professionals', href: '/professionnels' },
+  { key: 'blog', href: '/blog' },
+  { key: 'about', href: '/a-propos' },
+] as const;
 
 interface NavMobileProps {
   open: boolean;
@@ -25,6 +24,8 @@ interface NavMobileProps {
 
 export function NavMobile({ open, onOpenChange }: NavMobileProps) {
   const pathname = usePathname();
+  const t = useTranslations('nav');
+  const tCommon = useTranslations('common');
 
   const handleLinkClick = () => {
     onOpenChange(false);
@@ -54,7 +55,7 @@ export function NavMobile({ open, onOpenChange }: NavMobileProps) {
                     : 'text-muted-foreground'
                 )}
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             );
           })}
@@ -65,7 +66,7 @@ export function NavMobile({ open, onOpenChange }: NavMobileProps) {
         <div className="px-4">
           <Button asChild className="w-full">
             <Link href="/contact" onClick={handleLinkClick}>
-              Demander un devis
+              {tCommon('requestQuote')}
             </Link>
           </Button>
         </div>

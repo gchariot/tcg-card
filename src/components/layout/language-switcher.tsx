@@ -1,5 +1,7 @@
 'use client';
 
+import { useLocale } from 'next-intl';
+import { usePathname, useRouter } from '@/i18n/routing';
 import { Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -12,15 +14,15 @@ import {
 const languages = [
   { code: 'fr', label: 'Français', flag: '🇫🇷' },
   { code: 'en', label: 'English', flag: '🇬🇧' },
-];
+] as const;
 
 export function LanguageSwitcher() {
-  // TODO: Implement with next-intl when i18n is set up
-  const currentLocale = 'fr';
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const handleLanguageChange = (locale: string) => {
-    // TODO: Implement language switching with next-intl
-    console.log('Switch to:', locale);
+  const handleLanguageChange = (newLocale: 'fr' | 'en') => {
+    router.replace(pathname, { locale: newLocale });
   };
 
   return (
@@ -35,7 +37,7 @@ export function LanguageSwitcher() {
           <DropdownMenuItem
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
-            className={currentLocale === lang.code ? 'bg-accent' : ''}
+            className={locale === lang.code ? 'bg-accent' : ''}
           >
             <span className="mr-2">{lang.flag}</span>
             {lang.label}

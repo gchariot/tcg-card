@@ -1,15 +1,17 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from '@/i18n/routing';
 import { NavMain } from './nav-main';
 import { NavMobile } from './nav-mobile';
 import { LanguageSwitcher } from './language-switcher';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const t = useTranslations('nav');
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -24,7 +26,7 @@ export function Header() {
           <NavMain />
           <LanguageSwitcher />
           <Button asChild>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">{t('contact')}</Link>
           </Button>
         </div>
 

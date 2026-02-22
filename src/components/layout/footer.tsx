@@ -1,26 +1,9 @@
-import Link from 'next/link';
+'use client';
+
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Instagram, Linkedin, Twitter } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
-
-const footerLinks = {
-  services: [
-    { label: 'Expertise individuelle', href: '/services#expertise-individuelle' },
-    { label: 'Inventaire collection', href: '/services#inventaire-collection' },
-    { label: 'Évaluation assurance', href: '/services#evaluation-assurance' },
-    { label: 'Expertise sinistre', href: '/services#expertise-sinistre' },
-    { label: 'Authentification', href: '/services#authentification' },
-  ],
-  company: [
-    { label: 'À propos', href: '/a-propos' },
-    { label: 'Méthodologie', href: '/methodologie' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Contact', href: '/contact' },
-  ],
-  legal: [
-    { label: 'Mentions légales', href: '/mentions-legales' },
-    { label: 'Politique de confidentialité', href: '/politique-confidentialite' },
-  ],
-};
 
 const socialLinks = [
   { label: 'Instagram', href: '#', icon: Instagram },
@@ -29,7 +12,29 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const t = useTranslations('footer');
+  const tNav = useTranslations('nav');
   const currentYear = new Date().getFullYear();
+
+  const footerLinks = {
+    services: [
+      { label: 'Expertise individuelle', href: '/services#expertise-individuelle' },
+      { label: 'Inventaire collection', href: '/services#inventaire-collection' },
+      { label: 'Évaluation assurance', href: '/services#evaluation-assurance' },
+      { label: 'Expertise sinistre', href: '/services#expertise-sinistre' },
+      { label: 'Authentification', href: '/services#authentification' },
+    ],
+    company: [
+      { key: 'about', href: '/a-propos' },
+      { key: 'methodology', href: '/methodologie' },
+      { key: 'blog', href: '/blog' },
+      { key: 'contact', href: '/contact' },
+    ],
+    legal: [
+      { key: 'legalNotice', href: '/mentions-legales' },
+      { key: 'privacy', href: '/politique-confidentialite' },
+    ],
+  };
 
   return (
     <footer className="border-t bg-muted/40">
@@ -41,8 +46,7 @@ export function Footer() {
               CARTATTAC
             </Link>
             <p className="text-sm text-muted-foreground">
-              Expertise professionnelle pour cartes à collectionner TCG.
-              Méthodologie rigoureuse, analyse objective, totale indépendance.
+              {t('description')}
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -62,7 +66,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Services</h3>
+            <h3 className="mb-4 text-sm font-semibold">{tNav('services')}</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
@@ -79,7 +83,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Entreprise</h3>
+            <h3 className="mb-4 text-sm font-semibold">{t('navigation')}</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
@@ -87,7 +91,7 @@ export function Footer() {
                     href={link.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    {link.label}
+                    {tNav(link.key)}
                   </Link>
                 </li>
               ))}
@@ -96,7 +100,7 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Informations légales</h3>
+            <h3 className="mb-4 text-sm font-semibold">{t('legal')}</h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.href}>
@@ -104,7 +108,7 @@ export function Footer() {
                     href={link.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 </li>
               ))}
@@ -116,7 +120,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} CARTATTAC. Tous droits réservés.
+            © {currentYear} CARTATTAC. {t('rights')}
           </p>
           <p className="text-sm text-muted-foreground">
             Multi-TCG : Pokémon • One Piece • Dragon Ball • Magic • Lorcana

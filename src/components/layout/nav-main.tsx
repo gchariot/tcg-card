@@ -1,19 +1,20 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { Link, usePathname } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { label: 'Services', href: '/services' },
-  { label: 'Méthodologie', href: '/methodologie' },
-  { label: 'Particuliers', href: '/particuliers' },
-  { label: 'Professionnels', href: '/professionnels' },
-  { label: 'Blog', href: '/blog' },
-];
+  { key: 'services', href: '/services' },
+  { key: 'methodology', href: '/methodologie' },
+  { key: 'individuals', href: '/particuliers' },
+  { key: 'professionals', href: '/professionnels' },
+  { key: 'blog', href: '/blog' },
+] as const;
 
 export function NavMain() {
   const pathname = usePathname();
+  const t = useTranslations('nav');
 
   return (
     <nav className="flex items-center gap-1">
@@ -32,7 +33,7 @@ export function NavMain() {
                 : 'text-muted-foreground'
             )}
           >
-            {item.label}
+            {t(item.key)}
           </Link>
         );
       })}
