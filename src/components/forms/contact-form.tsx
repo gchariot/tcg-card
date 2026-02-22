@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'sonner';
@@ -365,9 +366,9 @@ export function ContactForm() {
               <div className="space-y-1 leading-none">
                 <FormLabel className="text-sm font-normal">
                   J'accepte que mes données soient traitées conformément à la{' '}
-                  <a href="/politique-confidentialite" className="underline hover:text-primary">
+                  <Link href="/politique-confidentialite" className="underline hover:text-primary">
                     politique de confidentialité
-                  </a>{' '}
+                  </Link>{' '}
                   *
                 </FormLabel>
                 <FormMessage />

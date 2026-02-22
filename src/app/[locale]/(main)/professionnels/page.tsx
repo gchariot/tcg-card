@@ -12,6 +12,7 @@ import {
   Shield,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: 'Professionnels',
@@ -102,7 +103,13 @@ const guarantees = [
   'Interlocuteur unique et disponible',
 ];
 
-export default function ProfessionnelsPage() {
+export default async function ProfessionnelsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="flex flex-col">
       {/* Hero */}

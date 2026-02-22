@@ -17,6 +17,7 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: 'Particuliers',
@@ -104,7 +105,13 @@ const faq = [
   },
 ];
 
-export default function ParticuliersPage() {
+export default async function ParticuliersPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="flex flex-col">
       {/* Hero */}

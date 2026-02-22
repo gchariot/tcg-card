@@ -15,6 +15,7 @@ import {
   BookOpen,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import { ScrollTimeline, type TimelineItem } from '@/components/sections/scroll-timeline';
 
 export const metadata: Metadata = {
@@ -158,7 +159,13 @@ const guarantees = [
   },
 ];
 
-export default function MethodologiePage() {
+export default async function MethodologiePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="flex flex-col">
       {/* Hero */}

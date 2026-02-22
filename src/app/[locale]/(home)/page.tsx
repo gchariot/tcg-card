@@ -6,13 +6,14 @@ import { ArrowRight } from 'lucide-react';
 
 const tcgList = ['Pokémon', 'One Piece', 'Dragon Ball', 'Magic', 'Lorcana'];
 
-export default function HomePage({
+export default async function HomePage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  // This is a workaround for Next.js 15+ where params is a Promise
-  // We need to use the sync version for server components
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return <HomePageContent />;
 }
 
@@ -21,7 +22,7 @@ function HomePageContent() {
 
   return (
     <div className="flex min-h-[calc(100vh-4rem)] flex-col">
-      {/* Hero Section - Takes remaining viewport height */}
+      {/* Hero Section */}
       <section className="flex flex-1 flex-col items-center justify-center px-4">
         <div className="text-center">
           <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
@@ -46,7 +47,7 @@ function HomePageContent() {
         </div>
       </section>
 
-      {/* TCG List - Fixed at bottom */}
+      {/* TCG List */}
       <section className="border-t py-6">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">

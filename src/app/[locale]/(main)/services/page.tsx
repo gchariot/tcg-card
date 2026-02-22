@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import { ScrollTimeline, type TimelineItem } from '@/components/sections/scroll-timeline';
 
 export const metadata: Metadata = {
@@ -107,7 +108,13 @@ const whyExpertise = [
   },
 ];
 
-export default function ServicesPage() {
+export default async function ServicesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <div className="flex flex-col">
       {/* Hero */}
