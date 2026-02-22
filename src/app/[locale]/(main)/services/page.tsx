@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { ScrollTimeline, type TimelineItem } from '@/components/sections/scroll-timeline';
 
 export const metadata: Metadata = {
   title: 'Nos Services',
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     "Découvrez nos services d'expertise pour cartes à collectionner : expertise individuelle, inventaire, évaluation assurance, expertise sinistre, authentification.",
 };
 
-const services = [
+const services: TimelineItem[] = [
   {
     id: 'expertise-individuelle',
     title: 'Expertise de carte individuelle',
@@ -29,7 +30,7 @@ const services = [
       'Estimation de la valeur de marché',
       'Rapport détaillé et documenté',
     ],
-    icon: Search,
+    icon: <Search className="h-6 w-6 text-primary" />,
   },
   {
     id: 'inventaire-collection',
@@ -42,7 +43,7 @@ const services = [
       'Estimation globale documentée',
       'Classification par catégories',
     ],
-    icon: List,
+    icon: <List className="h-6 w-6 text-primary" />,
   },
   {
     id: 'evaluation-assurance',
@@ -54,7 +55,7 @@ const services = [
       'Mise à jour périodique possible',
       'Certificat officiel',
     ],
-    icon: Shield,
+    icon: <Shield className="h-6 w-6 text-primary" />,
   },
   {
     id: 'expertise-sinistre',
@@ -67,7 +68,7 @@ const services = [
       'Rapport détaillé pour assurance',
       'Intervention rapide',
     ],
-    icon: AlertTriangle,
+    icon: <AlertTriangle className="h-6 w-6 text-primary" />,
   },
   {
     id: 'authentification',
@@ -79,7 +80,7 @@ const services = [
       'Comparaison avec exemplaires authentiques',
       'Certificat d\'authenticité',
     ],
-    icon: CheckCircle,
+    icon: <CheckCircle className="h-6 w-6 text-primary" />,
   },
 ];
 
@@ -119,39 +120,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services List */}
+      {/* Services Timeline */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="space-y-16">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                id={service.id}
-                className={`flex flex-col gap-8 lg:flex-row lg:items-center ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
-              >
-                <div className="flex-1">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-                    <service.icon className="h-7 w-7 text-primary" />
-                  </div>
-                  <h2 className="mb-4 text-2xl font-bold md:text-3xl">{service.title}</h2>
-                  <p className="mb-6 text-lg text-muted-foreground">{service.description}</p>
-                  <ul className="space-y-2">
-                    {service.details.map((detail) => (
-                      <li key={detail} className="flex items-start gap-2">
-                        <CheckCircle className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-1 items-center justify-center">
-                  <div className="h-64 w-full max-w-md rounded-xl bg-muted/50" />
-                </div>
-              </div>
-            ))}
-          </div>
+          <ScrollTimeline items={services} />
         </div>
       </section>
 

@@ -9,13 +9,13 @@ import {
   TrendingUp,
   Calculator,
   ArrowRight,
-  CheckCircle,
   FileText,
   Camera,
   Award,
   BookOpen,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { ScrollTimeline, type TimelineItem } from '@/components/sections/scroll-timeline';
 
 export const metadata: Metadata = {
   title: 'Méthodologie',
@@ -23,10 +23,22 @@ export const metadata: Metadata = {
     "Notre méthodologie d'expertise en 6 étapes : identification, authentification, évaluation de l'état, analyse de la rareté, analyse du marché, et détermination des valeurs.",
 };
 
-const steps = [
+function StepIcon({ number, children }: { number: number; children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-3">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+        {number}
+      </div>
+      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+const steps: TimelineItem[] = [
   {
-    number: 1,
-    icon: Search,
+    id: 'etape-1-identification',
     title: 'Identification',
     description:
       "Identification précise de la carte : nom, édition, numéro, langue, variante. Vérification dans les bases de données officielles.",
@@ -35,10 +47,10 @@ const steps = [
       'Identification des variantes (1ère édition, holo, reverse...)',
       'Vérification de la langue et du marché d\'origine',
     ],
+    icon: <StepIcon number={1}><Search className="h-5 w-5 text-primary" /></StepIcon>,
   },
   {
-    number: 2,
-    icon: ShieldCheck,
+    id: 'etape-2-authentification',
     title: 'Authentification',
     description:
       "Analyse technique visant à confirmer l'authenticité de la carte et à détecter d'éventuelles contrefaçons.",
@@ -48,10 +60,10 @@ const steps = [
       'Comparaison avec exemplaires authentiques',
       'Vérification des textures et finitions',
     ],
+    icon: <StepIcon number={2}><ShieldCheck className="h-5 w-5 text-primary" /></StepIcon>,
   },
   {
-    number: 3,
-    icon: ClipboardCheck,
+    id: 'etape-3-evaluation-etat',
     title: 'Évaluation de l\'état',
     description:
       "Examen minutieux de l'état de conservation selon les standards internationaux (centering, surface, edges, corners).",
@@ -61,10 +73,10 @@ const steps = [
       'État des bords (edges)',
       'État des coins (corners)',
     ],
+    icon: <StepIcon number={3}><ClipboardCheck className="h-5 w-5 text-primary" /></StepIcon>,
   },
   {
-    number: 4,
-    icon: Gem,
+    id: 'etape-4-rarete',
     title: 'Analyse de la rareté',
     description:
       "Évaluation de la rareté de la carte en fonction de son tirage, de sa distribution et de sa disponibilité sur le marché.",
@@ -74,10 +86,10 @@ const steps = [
       'Disponibilité sur le marché secondaire',
       'Historique des ventes',
     ],
+    icon: <StepIcon number={4}><Gem className="h-5 w-5 text-primary" /></StepIcon>,
   },
   {
-    number: 5,
-    icon: TrendingUp,
+    id: 'etape-5-marche',
     title: 'Analyse du marché',
     description:
       "Étude des transactions récentes et des tendances de marché pour établir une fourchette de prix réaliste.",
@@ -87,10 +99,10 @@ const steps = [
       'Tendances de marché',
       'Impact de l\'actualité TCG',
     ],
+    icon: <StepIcon number={5}><TrendingUp className="h-5 w-5 text-primary" /></StepIcon>,
   },
   {
-    number: 6,
-    icon: Calculator,
+    id: 'etape-6-valeurs',
     title: 'Détermination des valeurs',
     description:
       "Établissement des différentes valeurs : valeur de marché, valeur de remplacement pour assurance, valeur à neuf.",
@@ -100,6 +112,7 @@ const steps = [
       'Fourchette de prix justifiée',
       'Recommandations',
     ],
+    icon: <StepIcon number={6}><Calculator className="h-5 w-5 text-primary" /></StepIcon>,
   },
 ];
 
@@ -159,43 +172,10 @@ export default function MethodologiePage() {
         </div>
       </section>
 
-      {/* Steps */}
+      {/* Steps Timeline */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="space-y-12">
-            {steps.map((step, index) => (
-              <div
-                key={step.number}
-                className={`flex flex-col gap-8 lg:flex-row lg:items-start ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
-              >
-                <div className="flex-1">
-                  <div className="mb-4 flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
-                      {step.number}
-                    </div>
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                      <step.icon className="h-6 w-6 text-primary" />
-                    </div>
-                  </div>
-                  <h2 className="mb-3 text-2xl font-bold">{step.title}</h2>
-                  <p className="mb-4 text-muted-foreground">{step.description}</p>
-                  <ul className="space-y-2">
-                    {step.details.map((detail) => (
-                      <li key={detail} className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-1 items-center justify-center">
-                  <div className="h-48 w-full max-w-sm rounded-xl bg-muted/50" />
-                </div>
-              </div>
-            ))}
-          </div>
+          <ScrollTimeline items={steps} />
         </div>
       </section>
 
