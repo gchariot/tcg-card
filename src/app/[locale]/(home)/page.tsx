@@ -2,9 +2,6 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
-import { ArrowRight } from 'lucide-react';
-
-const tcgList = ['Pokémon', 'One Piece', 'Dragon Ball', 'Magic', 'Lorcana'];
 
 export default async function HomePage({
   params,
