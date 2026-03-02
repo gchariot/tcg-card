@@ -5,6 +5,7 @@ import { Link, usePathname } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 
 const navItems = [
+  { key: 'home', href: '/' },
   { key: 'services', href: '/services' },
   { key: 'methodology', href: '/methodologie' },
   { key: 'individuals', href: '/particuliers' },

@@ -23,45 +23,61 @@ function HomePageContent() {
   return (
     <div className="flex min-h-[calc(100vh-4rem)] flex-col">
       {/* Hero Section */}
-      <section className="flex flex-1 flex-col items-center justify-center px-4">
-        <div className="text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            {t('title')}
-            <br />
-            {t('titleLine2')}
+      <section className="flex flex-1 flex-col items-center justify-center px-4 py-16">
+        <div className="mx-auto w-full max-w-6xl text-center">
+          {/* Main Title */}
+          <h1
+            className="mb-8 text-4xl font-black uppercase md:text-5xl lg:text-6xl"
+            style={{
+              fontFamily: 'Impact, "Arial Black", Arial, sans-serif',
+              letterSpacing: '0.05em',
+            }}
+          >
+            {t('mainTitle')}
           </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            {t('subtitle')}
+
+          {/* Subtitle - Single line */}
+          <p
+            className="mx-auto mb-6 text-sm leading-relaxed md:text-base"
+            style={{
+              fontFamily: '"Courier New", Courier, monospace',
+            }}
+          >
+            {t('description')}
           </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="min-w-[160px]">
-              <Link href="/particuliers">
-                {t('cta.individuals')}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+
+          {/* Explanation - Two lines */}
+          <p
+            className="mx-auto mb-12 max-w-6xl text-sm leading-relaxed md:text-base"
+            style={{
+              fontFamily: '"Courier New", Courier, monospace',
+            }}
+          >
+            {t('explanation')}
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-6">
+            <Button
+              asChild
+              size="lg"
+              className="min-w-[200px] rounded-full bg-black px-8 py-6 text-base font-black uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
+            >
+              <Link href="/services">{t('cta.services')}</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="min-w-[160px]">
-              <Link href="/professionnels">{t('cta.professionals')}</Link>
+            <Button
+              asChild
+              size="lg"
+              className="min-w-[200px] rounded-full bg-black px-8 py-6 text-base font-black uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
+            >
+              <Link href="/particuliers">{t('cta.expertises')}</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* TCG List */}
-      <section className="border-t py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-            {tcgList.map((tcg) => (
-              <span
-                key={tcg}
-                className="text-sm font-medium text-muted-foreground md:text-base"
-              >
-                {tcg}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Separator Line */}
+      <div className="border-t-2 border-black" />
     </div>
   );
 }

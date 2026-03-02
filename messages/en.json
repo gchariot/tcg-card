@@ -14,17 +14,18 @@
     "contact": "Contact"
   },
   "home": {
-    "title": "Professional expertise",
-    "titleLine2": "for collectible cards",
-    "subtitle": "Rigorous methodology • Objective analysis • Total independence",
+    "mainTitle": "Protect your collection",
+    "description": "Professional expertise to insure, protect and\u00A0value your collection of cards and\u00A0sealed items.",
+    "explanation": "Each evaluation follows a rigorous methodology combining technical analysis, market comparables and\u00A0recognized standards. Carried out in complete independence, our expertises guarantee objective, reliable and\u00A0defensible estimates.",
     "cta": {
-      "individuals": "Individuals",
-      "professionals": "Professionals"
+      "services": "Our services",
+      "expertises": "Who our expertises are for"
     }
   },
   "services": {
     "title": "Our Services",
     "subtitle": "Services tailored to collectors and professionals alike.",
+    "intro": "We offer expertise services adapted to both individual collectors and market professionals. Each intervention aims to confirm the authenticity of cards, guarantee their authenticity and provide reliable and documented evaluations.",
     "individual": {
       "title": "Individual Card Expertise",
       "description": "In-depth analysis of authenticity, condition and market value of a card.",

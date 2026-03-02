@@ -14,17 +14,18 @@
     "contact": "Contact"
   },
   "home": {
-    "title": "Expertise professionnelle",
-    "titleLine2": "cartes à collectionner",
-    "subtitle": "Méthodologie rigoureuse • Analyse objective • Totale indépendance",
+    "mainTitle": "Protégez votre collection",
+    "description": "Expertise professionnelle pour assurer, proteger et\u00A0valoriser votre collection de cartes et\u00A0d'items scelles.",
+    "explanation": "Chaque évaluation suit une méthodologie rigoureuse associant analyse technique, comparables de marché et\u00A0standards reconnus. Réalisées en toute indépendance, nos expertises garantissent des estimations objectives, fiables et\u00A0défendables.",
     "cta": {
-      "individuals": "Particuliers",
-      "professionals": "Professionnels"
+      "services": "Nos services",
+      "expertises": "A qui s'adresse nos expertises"
     }
   },
   "services": {
     "title": "Nos services",
     "subtitle": "Des prestations adaptées aux collectionneurs comme aux professionnels.",
+    "intro": "Nous proposons des prestations d'expertise adaptées aussi bien aux collectionneurs particuliers qu'aux professionnels du marché. Chaque intervention vise à confirmer l'authenticité des cartes, garantir leur authenticité et fournir des évaluations fiables et documentées.",
     "individual": {
       "title": "Expertise de carte individuelle",
       "description": "Analyse approfondie de l'authenticité, de l'état et de la valeur de marché d'une carte.",

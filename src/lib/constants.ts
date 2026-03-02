@@ -7,6 +7,7 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_ITEMS = [
+  { label: 'nav.home', href: '/' },
   { label: 'nav.services', href: '/services' },
   { label: 'nav.methodology', href: '/methodologie' },
   { label: 'nav.individuals', href: '/particuliers' },
