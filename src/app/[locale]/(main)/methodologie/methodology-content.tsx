@@ -61,7 +61,7 @@ export function MethodologyPageContent() {
 
   return (
     <div className="flex flex-col">
-      {/* Section 1: Notre Méthodologie */}
+      {/* Section 1: Méthodologie */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-8 md:px-12 lg:px-16">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
@@ -76,15 +76,15 @@ export function MethodologyPageContent() {
                   letterSpacing: '0.02em',
                 }}
               >
-                <span className="relative z-10">NOTRE </span>
+                <span className="relative z-10">MÉTHOD</span>
                 <span className="relative">
-                  <span className="relative z-10">MÉTHO</span>
+                  <span className="relative z-10">OLOGI</span>
                   <span
                     className="absolute left-0 top-0 -z-10 h-[120%] w-full"
                     style={{ backgroundColor: '#87CEEB' }}
                   />
                 </span>
-                <span className="relative z-10">DOLOGIE</span>
+                <span className="relative z-10">E</span>
               </h1>
 
               {/* Why Choose Us */}
