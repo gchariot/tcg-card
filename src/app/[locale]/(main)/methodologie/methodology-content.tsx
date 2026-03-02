@@ -56,7 +56,6 @@ export function MethodologyPageContent() {
     { id: 'independence', key: 'independence' },
     { id: 'objectivity', key: 'objectivity' },
     { id: 'transparency', key: 'transparency' },
-    { id: 'confidentiality', key: 'confidentiality' },
   ];
 
   return (
@@ -76,14 +75,15 @@ export function MethodologyPageContent() {
                   letterSpacing: '0.02em',
                 }}
               >
-                <span className="relative z-10">MÉTH</span>
+                <span className="relative z-10">M</span>
                 <span className="relative">
-                  <span className="relative z-10">ODOLOGIE</span>
+                  <span className="relative z-10">ÉTHODOLOGI</span>
                   <span
                     className="absolute left-0 top-0 -z-10 h-[120%] w-full"
                     style={{ backgroundColor: '#87CEEB' }}
                   />
                 </span>
+                <span className="relative z-10">E</span>
               </h1>
 
               {/* Why Choose Us */}
