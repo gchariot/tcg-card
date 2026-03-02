@@ -30,7 +30,7 @@ function CustomAccordionTrigger({
         {children}
         <span
           className="text-4xl font-normal leading-none transition-transform duration-200"
-          style={{ fontFamily: 'Impact, "Arial Black", Arial, sans-serif' }}
+          style={{ fontFamily: 'var(--font-montserrat)' }}
         >
           <span className="group-data-[state=open]:hidden">+</span>
           <span className="hidden group-data-[state=open]:inline">−</span>
@@ -70,7 +70,7 @@ export function ServicesPageContent() {
               <h1
                 className="relative mb-0 text-5xl font-bold uppercase md:text-6xl lg:text-7xl"
                 style={{
-                  fontFamily: 'Impact, "Arial Black", Arial, sans-serif',
+                  fontFamily: 'var(--font-montserrat)',
                   letterSpacing: '0.05em',
                 }}
               >
@@ -91,7 +91,7 @@ export function ServicesPageContent() {
                   <span
                     className="text-2xl font-bold uppercase md:text-3xl"
                     style={{
-                      fontFamily: 'Impact, "Arial Black", Arial, sans-serif',
+                      fontFamily: 'var(--font-montserrat)',
                       letterSpacing: '0.05em',
                     }}
                   >
@@ -181,7 +181,7 @@ export function ServicesPageContent() {
                     <CustomAccordionTrigger
                       className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                       style={{
-                        fontFamily: 'Impact, "Arial Black", Arial, sans-serif',
+                        fontFamily: 'var(--font-montserrat)',
                         letterSpacing: '0.03em',
                       }}
                     >
@@ -223,7 +223,7 @@ export function ServicesPageContent() {
               <h2
                 className="relative mb-0 text-5xl font-bold uppercase md:text-6xl lg:text-7xl"
                 style={{
-                  fontFamily: 'Impact, "Arial Black", Arial, sans-serif',
+                  fontFamily: 'var(--font-montserrat)',
                   letterSpacing: '0.05em',
                 }}
               >
@@ -256,7 +256,7 @@ export function ServicesPageContent() {
                     <CustomAccordionTrigger
                       className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                       style={{
-                        fontFamily: 'Impact, "Arial Black", Arial, sans-serif',
+                        fontFamily: 'var(--font-montserrat)',
                         letterSpacing: '0.03em',
                       }}
                     >
@@ -281,7 +281,7 @@ export function ServicesPageContent() {
                   size="lg"
                   className="min-w-[200px] rounded-full bg-black px-8 py-6 text-base font-bold uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
                   style={{
-                    fontFamily: 'Impact, "Arial Black", Arial, sans-serif',
+                    fontFamily: 'var(--font-montserrat)',
                     letterSpacing: '0.1em',
                   }}
                 >

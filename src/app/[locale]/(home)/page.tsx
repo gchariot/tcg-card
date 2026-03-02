@@ -26,7 +26,7 @@ function HomePageContent() {
           <h1
             className="mb-8 text-4xl font-black uppercase md:text-5xl lg:text-6xl"
             style={{
-              fontFamily: 'Impact, "Arial Black", Arial, sans-serif',
+              fontFamily: 'var(--font-montserrat)',
               letterSpacing: '0.05em',
             }}
           >
