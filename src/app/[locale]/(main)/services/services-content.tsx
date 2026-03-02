@@ -68,7 +68,7 @@ export function ServicesPageContent() {
             <div>
               {/* Title */}
               <h1
-                className="relative mb-0 text-5xl font-bold uppercase md:text-6xl lg:text-7xl"
+                className="relative mb-0 text-4xl font-bold uppercase md:text-5xl lg:text-6xl"
                 style={{
                   fontFamily: 'var(--font-montserrat)',
                   fontWeight: 900,
@@ -224,7 +224,7 @@ export function ServicesPageContent() {
             {/* Left Column */}
             <div>
               <h2
-                className="relative mb-0 text-5xl font-bold uppercase md:text-6xl lg:text-7xl"
+                className="relative mb-0 text-4xl font-bold uppercase md:text-5xl lg:text-6xl"
                 style={{
                   fontFamily: 'var(--font-montserrat)',
                   fontWeight: 900,
