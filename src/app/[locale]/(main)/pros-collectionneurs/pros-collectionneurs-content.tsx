@@ -1,0 +1,308 @@
+'use client';
+
+import * as React from 'react';
+import { useTranslations } from 'next-intl';
+import { Button } from '@/components/ui/button';
+import { Link } from '@/i18n/routing';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+} from '@/components/ui/accordion';
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { cn } from '@/lib/utils';
+
+// Custom Accordion Trigger with + and -
+function CustomAccordionTrigger({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
+  return (
+    <AccordionPrimitive.Header className="flex">
+      <AccordionPrimitive.Trigger
+        className={cn(
+          'group flex flex-1 items-center justify-between py-4 text-left transition-all outline-none',
+          className
+        )}
+        {...props}
+      >
+        {children}
+        <span
+          className="text-4xl font-normal leading-none transition-transform duration-200"
+          style={{ fontFamily: 'var(--font-montserrat)' }}
+        >
+          <span className="group-data-[state=open]:hidden">+</span>
+          <span className="hidden group-data-[state=open]:inline">−</span>
+        </span>
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
+  );
+}
+
+export function ProsCollectionneursContent() {
+  const tIndividuals = useTranslations('individuals');
+  const tProfessionals = useTranslations('professionals');
+
+  return (
+    <div className="flex flex-col">
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-8 md:px-12 lg:px-16">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+            {/* Left Column */}
+            <div>
+              {/* Title */}
+              <h1
+                className="relative mb-0 text-4xl font-bold uppercase md:text-5xl lg:text-6xl"
+                style={{
+                  fontFamily: 'var(--font-montserrat)',
+                  fontWeight: 900,
+                  letterSpacing: '0.02em',
+                }}
+              >
+                <span className="relative z-10">P</span>
+                <span className="relative">
+                  <span className="relative z-10">ROFESSIONNEL</span>
+                  <span
+                    className="absolute left-0 top-0 -z-10 h-[280%] w-full"
+                    style={{ backgroundColor: '#87CEEB' }}
+                  />
+                </span>
+                <span className="relative z-10">S &</span>
+                <br />
+                <span className="relative z-10">COLLECTIONNEURS</span>
+              </h1>
+
+              {/* Info Box */}
+              <div className="mt-6 rounded-3xl bg-gray-100 p-8 md:p-10">
+                <p
+                  className="text-sm leading-relaxed text-justify"
+                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                >
+                  Nous accompagnons aussi bien les collectionneurs et particuliers souhaitant protéger et valoriser leurs cartes que les professionnels nécessitant des évaluations fiables et documentées.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column */}
+            <div>
+              {/* Accordion Section */}
+              <Accordion type="single" collapsible>
+            {/* Particuliers et Collectionneurs */}
+            <AccordionItem
+              value="collectors"
+              className="border-t-[5px] border-black border-b-0"
+            >
+              <CustomAccordionTrigger
+                className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
+                style={{
+                  fontFamily: 'var(--font-montserrat)',
+                  fontWeight: 900,
+                  letterSpacing: '0.02em',
+                }}
+              >
+                PARTICULIERS ET COLLECTIONNEURS
+              </CustomAccordionTrigger>
+              <AccordionContent>
+                <p
+                  className="mb-4 text-sm leading-relaxed text-justify"
+                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                >
+                  Faites évaluer vos cartes par un expert indépendant pour les assurer, les vendre ou les intégrer à votre patrimoine.
+                </p>
+                <ul className="space-y-2">
+                  <li
+                    className="text-sm leading-relaxed"
+                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                  >
+                    • {tIndividuals('useCases.insurance.title')} : {tIndividuals('useCases.insurance.description')}
+                  </li>
+                  <li
+                    className="text-sm leading-relaxed"
+                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                  >
+                    • {tIndividuals('useCases.damage.title')} : {tIndividuals('useCases.damage.description')}
+                  </li>
+                  <li
+                    className="text-sm leading-relaxed"
+                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                  >
+                    • {tIndividuals('useCases.patrimony.title')} : {tIndividuals('useCases.patrimony.description')}
+                  </li>
+                  <li
+                    className="text-sm leading-relaxed"
+                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                  >
+                    • {tIndividuals('useCases.transaction.title')} : {tIndividuals('useCases.transaction.description')}
+                  </li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Assurances et Courtiers */}
+            <AccordionItem
+              value="insurance"
+              className="border-t-[5px] border-black border-b-0"
+            >
+              <CustomAccordionTrigger
+                className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
+                style={{
+                  fontFamily: 'var(--font-montserrat)',
+                  fontWeight: 900,
+                  letterSpacing: '0.02em',
+                }}
+              >
+                {tProfessionals('domains.insurance.title')}
+              </CustomAccordionTrigger>
+              <AccordionContent>
+                <p
+                  className="mb-4 text-sm leading-relaxed text-justify"
+                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                >
+                  {tProfessionals('domains.insurance.description')}
+                </p>
+                <ul className="space-y-2">
+                  {(tProfessionals.raw('domains.insurance.services') as string[]).map((service, index) => (
+                    <li
+                      key={index}
+                      className="text-sm leading-relaxed"
+                      style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    >
+                      • {service}
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Notaires et Avocats */}
+            <AccordionItem
+              value="notary"
+              className="border-t-[5px] border-black border-b-0"
+            >
+              <CustomAccordionTrigger
+                className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
+                style={{
+                  fontFamily: 'var(--font-montserrat)',
+                  fontWeight: 900,
+                  letterSpacing: '0.02em',
+                }}
+              >
+                {tProfessionals('domains.notary.title')}
+              </CustomAccordionTrigger>
+              <AccordionContent>
+                <p
+                  className="mb-4 text-sm leading-relaxed text-justify"
+                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                >
+                  {tProfessionals('domains.notary.description')}
+                </p>
+                <ul className="space-y-2">
+                  {(tProfessionals.raw('domains.notary.services') as string[]).map((service, index) => (
+                    <li
+                      key={index}
+                      className="text-sm leading-relaxed"
+                      style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    >
+                      • {service}
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Maisons de vente aux enchères */}
+            <AccordionItem
+              value="auction"
+              className="border-t-[5px] border-black border-b-0"
+            >
+              <CustomAccordionTrigger
+                className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
+                style={{
+                  fontFamily: 'var(--font-montserrat)',
+                  fontWeight: 900,
+                  letterSpacing: '0.02em',
+                }}
+              >
+                {tProfessionals('domains.auction.title')}
+              </CustomAccordionTrigger>
+              <AccordionContent>
+                <p
+                  className="mb-4 text-sm leading-relaxed text-justify"
+                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                >
+                  {tProfessionals('domains.auction.description')}
+                </p>
+                <ul className="space-y-2">
+                  {(tProfessionals.raw('domains.auction.services') as string[]).map((service, index) => (
+                    <li
+                      key={index}
+                      className="text-sm leading-relaxed"
+                      style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    >
+                      • {service}
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Boutique TCG */}
+            <AccordionItem
+              value="shop"
+              className="border-t-[5px] border-black border-b-0 last:border-b-[5px]"
+            >
+              <CustomAccordionTrigger
+                className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
+                style={{
+                  fontFamily: 'var(--font-montserrat)',
+                  fontWeight: 900,
+                  letterSpacing: '0.02em',
+                }}
+              >
+                {tProfessionals('domains.shop.title')}
+              </CustomAccordionTrigger>
+              <AccordionContent>
+                <p
+                  className="mb-4 text-sm leading-relaxed text-justify"
+                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                >
+                  {tProfessionals('domains.shop.description')}
+                </p>
+                <ul className="space-y-2">
+                  {(tProfessionals.raw('domains.shop.services') as string[]).map((service, index) => (
+                    <li
+                      key={index}
+                      className="text-sm leading-relaxed"
+                      style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    >
+                      • {service}
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+
+              {/* CTA Button */}
+              <div className="mt-12 flex justify-end">
+                <Button
+                  asChild
+                  size="lg"
+                  className="min-w-[200px] rounded-full bg-black px-8 py-6 text-base font-bold uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
+                  style={{
+                    fontFamily: 'var(--font-montserrat)',
+                    fontWeight: 900,
+                    letterSpacing: '0.02em',
+                  }}
+                >
+                  <Link href="/contact">Commander une expertise</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

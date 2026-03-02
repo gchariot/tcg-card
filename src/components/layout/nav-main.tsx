@@ -8,8 +8,7 @@ const navItems = [
   { key: 'home', href: '/' },
   { key: 'services', href: '/services' },
   { key: 'methodology', href: '/methodologie' },
-  { key: 'individuals', href: '/particuliers' },
-  { key: 'professionals', href: '/professionnels' },
+  { key: 'prosCollectionneurs', href: '/pros-collectionneurs' },
   { key: 'blog', href: '/blog' },
 ] as const;
 

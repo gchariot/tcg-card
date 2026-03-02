@@ -10,8 +10,7 @@ export const NAV_ITEMS = [
   { label: 'nav.home', href: '/' },
   { label: 'nav.services', href: '/services' },
   { label: 'nav.methodology', href: '/methodologie' },
-  { label: 'nav.individuals', href: '/particuliers' },
-  { label: 'nav.professionals', href: '/professionnels' },
+  { label: 'nav.prosCollectionneurs', href: '/pros-collectionneurs' },
   { label: 'nav.blog', href: '/blog' },
   { label: 'nav.contact', href: '/contact' },
 ] as const;
