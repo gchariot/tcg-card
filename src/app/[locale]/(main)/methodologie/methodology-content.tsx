@@ -76,9 +76,9 @@ export function MethodologyPageContent() {
                   letterSpacing: '0.02em',
                 }}
               >
-                <span className="relative z-10">MÉTHOD</span>
+                <span className="relative z-10">MÉTH</span>
                 <span className="relative">
-                  <span className="relative z-10">OLOGI</span>
+                  <span className="relative z-10">ODOLOGI</span>
                   <span
                     className="absolute left-0 top-0 -z-10 h-[120%] w-full"
                     style={{ backgroundColor: '#87CEEB' }}
