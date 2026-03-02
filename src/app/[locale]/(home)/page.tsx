@@ -27,7 +27,8 @@ function HomePageContent() {
             className="mb-8 text-4xl font-black uppercase md:text-5xl lg:text-6xl"
             style={{
               fontFamily: 'var(--font-montserrat)',
-              letterSpacing: '0.05em',
+              fontWeight: 900,
+              letterSpacing: '0.02em',
             }}
           >
             {t('mainTitle')}

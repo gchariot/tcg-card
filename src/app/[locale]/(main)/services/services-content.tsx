@@ -71,7 +71,8 @@ export function ServicesPageContent() {
                 className="relative mb-0 text-5xl font-bold uppercase md:text-6xl lg:text-7xl"
                 style={{
                   fontFamily: 'var(--font-montserrat)',
-                  letterSpacing: '0.05em',
+                  fontWeight: 900,
+                  letterSpacing: '0.02em',
                 }}
               >
                 <span className="relative z-10">N</span>
@@ -92,7 +93,8 @@ export function ServicesPageContent() {
                     className="text-2xl font-bold uppercase md:text-3xl"
                     style={{
                       fontFamily: 'var(--font-montserrat)',
-                      letterSpacing: '0.05em',
+                      fontWeight: 900,
+                      letterSpacing: '0.02em',
                     }}
                   >
                     POURQUOI NOUS CHOISIR ?
@@ -182,7 +184,8 @@ export function ServicesPageContent() {
                       className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                       style={{
                         fontFamily: 'var(--font-montserrat)',
-                        letterSpacing: '0.03em',
+                        fontWeight: 900,
+                        letterSpacing: '0.02em',
                       }}
                     >
                       {t(`${service.key}.title`)}
@@ -224,7 +227,8 @@ export function ServicesPageContent() {
                 className="relative mb-0 text-5xl font-bold uppercase md:text-6xl lg:text-7xl"
                 style={{
                   fontFamily: 'var(--font-montserrat)',
-                  letterSpacing: '0.05em',
+                  fontWeight: 900,
+                  letterSpacing: '0.02em',
                 }}
               >
                 <span className="relative z-10">P</span>
@@ -257,7 +261,8 @@ export function ServicesPageContent() {
                       className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                       style={{
                         fontFamily: 'var(--font-montserrat)',
-                        letterSpacing: '0.03em',
+                        fontWeight: 900,
+                        letterSpacing: '0.02em',
                       }}
                     >
                       {t(`whyExpertise.${item.key}.title`)}
@@ -282,7 +287,8 @@ export function ServicesPageContent() {
                   className="min-w-[200px] rounded-full bg-black px-8 py-6 text-base font-bold uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
                   style={{
                     fontFamily: 'var(--font-montserrat)',
-                    letterSpacing: '0.1em',
+                    fontWeight: 900,
+                    letterSpacing: '0.02em',
                   }}
                 >
                   <Link href="/contact">Commander une expertise</Link>
