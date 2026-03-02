@@ -44,12 +44,19 @@ export function MethodologyPageContent() {
   const t = useTranslations('methodology');
 
   const steps = [
-    { id: 'identification', key: 'identification' },
-    { id: 'authentication', key: 'authentication' },
-    { id: 'condition', key: 'condition' },
-    { id: 'rarity', key: 'rarity' },
-    { id: 'market', key: 'market' },
-    { id: 'valuation', key: 'valuation' },
+    { id: 'identification', key: 'identification', number: 1 },
+    { id: 'authentication', key: 'authentication', number: 2 },
+    { id: 'condition', key: 'condition', number: 3 },
+    { id: 'rarity', key: 'rarity', number: 4 },
+    { id: 'market', key: 'market', number: 5 },
+    { id: 'valuation', key: 'valuation', number: 6 },
+  ];
+
+  const deliverables = [
+    { id: 'report', key: 'report' },
+    { id: 'photos', key: 'photos' },
+    { id: 'certificate', key: 'certificate' },
+    { id: 'inventory', key: 'inventory' },
   ];
 
   const commitments = [
@@ -147,7 +154,7 @@ export function MethodologyPageContent() {
                         letterSpacing: '0.02em',
                       }}
                     >
-                      {t(`steps.${step.key}.title`)}
+                      {step.number}. {t(`steps.${step.key}.title`)}
                     </CustomAccordionTrigger>
                     <AccordionContent>
                       <p
@@ -176,7 +183,7 @@ export function MethodologyPageContent() {
         </div>
       </section>
 
-      {/* Section 2: CTA */}
+      {/* Section 2: Livrables */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-8 md:px-12 lg:px-16">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
@@ -190,32 +197,52 @@ export function MethodologyPageContent() {
                   letterSpacing: '0.02em',
                 }}
               >
-                <span className="relative z-10">CONV</span>
+                <span className="relative z-10">L</span>
                 <span className="relative">
-                  <span className="relative z-10">AINCU PAR</span>
+                  <span className="relative z-10">IVRABLE</span>
                   <span
                     className="absolute left-0 top-0 -z-10 h-[280%] w-full"
                     style={{ backgroundColor: '#86efac' }}
                   />
                 </span>
-                <br />
-                <span className="relative z-10">NOTRE</span>
-                <br />
-                <span className="relative z-10">APPROCHE ?</span>
+                <span className="relative z-10">S FOURNIS</span>
               </h2>
             </div>
 
             {/* Right Column */}
-            <div className="flex flex-col justify-center">
-              <p
-                className="mb-8 text-sm leading-relaxed text-justify"
-                style={{ fontFamily: '"Courier New", Courier, monospace' }}
-              >
-                {t('cta.description')}
-              </p>
+            <div>
+              {/* Deliverables Accordion */}
+              <Accordion type="single" collapsible>
+                {deliverables.map((deliverable) => (
+                  <AccordionItem
+                    key={deliverable.id}
+                    value={deliverable.id}
+                    className="border-t-[5px] border-black border-b-0 last:border-b-[5px]"
+                  >
+                    <CustomAccordionTrigger
+                      className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
+                      style={{
+                        fontFamily: 'var(--font-montserrat)',
+                        fontWeight: 900,
+                        letterSpacing: '0.02em',
+                      }}
+                    >
+                      {t(`deliverables.${deliverable.key}.title`)}
+                    </CustomAccordionTrigger>
+                    <AccordionContent>
+                      <p
+                        className="text-sm leading-relaxed text-justify"
+                        style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                      >
+                        {t(`deliverables.${deliverable.key}.description`)}
+                      </p>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
 
               {/* CTA Button */}
-              <div className="flex justify-end">
+              <div className="mt-12 flex justify-end">
                 <Button
                   asChild
                   size="lg"
