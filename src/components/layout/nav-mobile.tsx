@@ -32,9 +32,14 @@ export function NavMobile({ open, onOpenChange }: NavMobileProps) {
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-[300px] sm:w-[350px]">
+      <SheetContent side="right" className="w-[85vw] max-w-[320px] sm:max-w-[360px]">
         <SheetHeader className="text-left">
-          <SheetTitle className="font-heading text-xl font-bold">KAMI</SheetTitle>
+          <SheetTitle
+            className="text-xl font-bold"
+            style={{ fontFamily: 'var(--font-poppins)' }}
+          >
+            KAMI
+          </SheetTitle>
         </SheetHeader>
 
         <nav className="mt-8 flex flex-col gap-2" style={{ fontFamily: 'var(--font-poppins)' }}>

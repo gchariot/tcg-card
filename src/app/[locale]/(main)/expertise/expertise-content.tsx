@@ -60,7 +60,7 @@ export function ExpertiseContent() {
             <div>
               {/* Title */}
               <h1
-                className="relative mb-0 break-words text-5xl font-bold uppercase md:text-6xl lg:text-[7rem]"
+                className="relative mb-0 break-words text-3xl font-bold uppercase md:text-6xl lg:text-[7rem]"
                 style={{
                   fontFamily: 'var(--font-roena)',
                   fontWeight: 400,
