@@ -22,15 +22,15 @@ function CustomAccordionTrigger({
     <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
         className={cn(
-          'group flex flex-1 items-center justify-between py-4 text-left transition-all outline-none',
+          'group flex flex-1 items-center justify-between py-2 text-left transition-all outline-none',
           className
         )}
         {...props}
       >
         {children}
         <span
-          className="text-4xl font-normal leading-none transition-transform duration-200"
-          style={{ fontFamily: 'var(--font-montserrat)' }}
+          className="text-xl font-normal leading-none transition-transform duration-200"
+          style={{ fontFamily: 'var(--font-roena)' }}
         >
           <span className="group-data-[state=open]:hidden">+</span>
           <span className="hidden group-data-[state=open]:inline">−</span>
@@ -66,41 +66,33 @@ export function MethodologyPageContent() {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-1 flex-col bg-[#B3FFC7]">
       {/* Section 1: Méthodologie */}
-      <section className="py-16 md:py-20">
+      <section className="flex flex-1 items-center py-6 md:py-8">
         <div className="container mx-auto px-8 md:px-12 lg:px-16">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             {/* Left Column */}
             <div>
               {/* Title */}
               <h1
-                className="relative mb-0 text-4xl font-bold uppercase md:text-5xl lg:text-6xl"
+                className="relative mb-0 break-words text-2xl font-bold uppercase md:text-5xl lg:text-[8rem]"
                 style={{
-                  fontFamily: 'var(--font-montserrat)',
-                  fontWeight: 900,
+                  fontFamily: 'var(--font-roena)',
+                  fontWeight: 400,
                   letterSpacing: '0.02em',
                 }}
               >
-                <span className="relative z-10">M</span>
-                <span className="relative">
-                  <span className="relative z-10">ÉTHODOLOGI</span>
-                  <span
-                    className="absolute left-0 top-0 -z-10 h-[120%] w-full"
-                    style={{ backgroundColor: '#87CEEB' }}
-                  />
-                </span>
-                <span className="relative z-10">E</span>
+                MÉTHODOLOGIE
               </h1>
 
               {/* Why Choose Us */}
-              <div className="mt-6 rounded-3xl bg-gray-100 p-8 md:p-10">
-                <p className="mb-8">
+              <div className="mt-4 rounded-3xl bg-[#fff4c2] p-6 md:p-8">
+                <p className="mb-4">
                   <span
                     className="text-2xl font-bold uppercase md:text-3xl"
                     style={{
-                      fontFamily: 'var(--font-montserrat)',
-                      fontWeight: 900,
+                      fontFamily: 'var(--font-poppins)',
+                      fontWeight: 700,
                       letterSpacing: '0.02em',
                     }}
                   >
@@ -108,12 +100,12 @@ export function MethodologyPageContent() {
                   </span>
                 </p>
 
-                <div className="space-y-6">
+                <div className="space-y-3">
                   {commitments.map((commitment) => (
                     <p
                       key={commitment.id}
                       className="text-sm leading-relaxed text-justify"
-                      style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                      style={{ fontFamily: 'var(--font-poppins)' }}
                     >
                       <span className="font-bold">
                         <span className="relative inline-block">
@@ -132,8 +124,8 @@ export function MethodologyPageContent() {
             <div>
               {/* Intro Text */}
               <p
-                className="mb-8 text-sm leading-relaxed text-justify"
-                style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                className="mb-4 text-sm leading-relaxed text-justify"
+                style={{ fontFamily: 'var(--font-poppins)' }}
               >
                 {t('subtitle')}
               </p>
@@ -144,13 +136,13 @@ export function MethodologyPageContent() {
                   <AccordionItem
                     key={step.id}
                     value={step.id}
-                    className="border-t-[5px] border-black border-b-0 last:border-b-[5px]"
+                    className="border-t-[5px] border-black border-b-0"
                   >
                     <CustomAccordionTrigger
                       className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                       style={{
-                        fontFamily: 'var(--font-montserrat)',
-                        fontWeight: 900,
+                        fontFamily: 'var(--font-poppins)',
+                        fontWeight: 700,
                         letterSpacing: '0.02em',
                       }}
                     >
@@ -159,7 +151,7 @@ export function MethodologyPageContent() {
                     <AccordionContent>
                       <p
                         className="mb-4 text-sm leading-relaxed text-justify"
-                        style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                        style={{ fontFamily: 'var(--font-poppins)' }}
                       >
                         {t(`steps.${step.key}.description`)}
                       </p>
@@ -168,7 +160,7 @@ export function MethodologyPageContent() {
                           <li
                             key={index}
                             className="text-sm leading-relaxed"
-                            style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                            style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             • {detail}
                           </li>
@@ -177,79 +169,58 @@ export function MethodologyPageContent() {
                     </AccordionContent>
                   </AccordionItem>
                 ))}
-              </Accordion>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Section 2: Livrables */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-8 md:px-12 lg:px-16">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-            {/* Left Column */}
-            <div>
-              <h2
-                className="relative mb-0 text-4xl font-bold uppercase md:text-5xl lg:text-6xl"
-                style={{
-                  fontFamily: 'var(--font-montserrat)',
-                  fontWeight: 900,
-                  letterSpacing: '0.02em',
-                }}
-              >
-                <span className="relative z-10">L</span>
-                <span className="relative">
-                  <span className="relative z-10">IVRABLE</span>
-                  <span
-                    className="absolute left-0 top-0 -z-10 h-[280%] w-full"
-                    style={{ backgroundColor: '#86efac' }}
-                  />
-                </span>
-                <span className="relative z-10">S FOURNIS</span>
-              </h2>
-            </div>
-
-            {/* Right Column */}
-            <div>
-              {/* Deliverables Accordion */}
-              <Accordion type="single" collapsible>
-                {deliverables.map((deliverable) => (
-                  <AccordionItem
-                    key={deliverable.id}
-                    value={deliverable.id}
-                    className="border-t-[5px] border-black border-b-0 last:border-b-[5px]"
+                {/* Nos Livrables — aggregated last item */}
+                <AccordionItem
+                  value="deliverables"
+                  className="border-t-[5px] border-black border-b-0 last:border-b-[5px]"
+                >
+                  <CustomAccordionTrigger
+                    className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
+                    style={{
+                      fontFamily: 'var(--font-poppins)',
+                      fontWeight: 700,
+                      letterSpacing: '0.02em',
+                    }}
                   >
-                    <CustomAccordionTrigger
-                      className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
-                      style={{
-                        fontFamily: 'var(--font-montserrat)',
-                        fontWeight: 900,
-                        letterSpacing: '0.02em',
-                      }}
-                    >
-                      {t(`deliverables.${deliverable.key}.title`)}
-                    </CustomAccordionTrigger>
-                    <AccordionContent>
-                      <p
-                        className="text-sm leading-relaxed text-justify"
-                        style={{ fontFamily: '"Courier New", Courier, monospace' }}
-                      >
-                        {t(`deliverables.${deliverable.key}.description`)}
-                      </p>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
+                    7. NOS LIVRABLES
+                  </CustomAccordionTrigger>
+                  <AccordionContent>
+                    <div className="space-y-6">
+                      {deliverables.map((deliverable) => (
+                        <div key={deliverable.id}>
+                          <h4
+                            className="mb-2 text-base font-bold md:text-lg"
+                            style={{
+                              fontFamily: 'var(--font-poppins)',
+                              fontWeight: 700,
+                              letterSpacing: '0.02em',
+                            }}
+                          >
+                            {t(`deliverables.${deliverable.key}.title`)}
+                          </h4>
+                          <p
+                            className="text-sm leading-relaxed text-justify"
+                            style={{ fontFamily: 'var(--font-poppins)' }}
+                          >
+                            {t(`deliverables.${deliverable.key}.description`)}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
               </Accordion>
 
               {/* CTA Button */}
-              <div className="mt-12 flex justify-end">
+              <div className="mt-6 flex justify-end">
                 <Button
                   asChild
                   size="lg"
-                  className="min-w-[200px] rounded-full bg-black px-8 py-6 text-base font-bold uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
+                  className="min-w-[200px] rounded-full bg-black px-8 py-4 text-base font-bold uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-5 md:text-lg"
                   style={{
-                    fontFamily: 'var(--font-montserrat)',
-                    fontWeight: 900,
+                    fontFamily: 'var(--font-poppins)',
+                    fontWeight: 400,
                     letterSpacing: '0.02em',
                   }}
                 >

@@ -3,7 +3,8 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
-import { Inter, Montserrat } from 'next/font/google';
+import { Inter, Montserrat, Poppins } from 'next/font/google';
+import localFont from 'next/font/local';
 import '../globals.css';
 import { Toaster } from '@/components/ui/sonner';
 
@@ -18,6 +19,19 @@ const montserrat = Montserrat({
   weight: ['400', '500', '600', '700', '800', '900'],
 });
 
+const poppins = Poppins({
+  variable: '--font-poppins',
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+});
+
+const roena = localFont({
+  src: '../../../public/fonts/Roena-Demo.otf',
+  variable: '--font-roena',
+  display: 'swap',
+});
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -30,8 +44,8 @@ export async function generateMetadata({
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    fr: 'CARTATTAC - Expertise professionnelle cartes TCG',
-    en: 'CARTATTAC - Professional TCG Card Expertise',
+    fr: 'KAMI - Expertise professionnelle cartes TCG',
+    en: 'KAMI - Professional TCG Card Expertise',
   };
 
   const descriptions: Record<string, string> = {
@@ -41,7 +55,7 @@ export async function generateMetadata({
 
   return {
     title: {
-      template: `%s | CARTATTAC`,
+      template: `%s | KAMI`,
       default: titles[locale] || titles.fr,
     },
     description: descriptions[locale] || descriptions.fr,
@@ -53,9 +67,9 @@ export async function generateMetadata({
       'évaluation collection',
       'assurance carte collection',
     ],
-    authors: [{ name: 'CARTATTAC' }],
-    creator: 'CARTATTAC',
-    metadataBase: new URL('https://cartattac.fr'),
+    authors: [{ name: 'KAMI' }],
+    creator: 'KAMI',
+    metadataBase: new URL('https://kami.fr'),
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -67,7 +81,7 @@ export async function generateMetadata({
       type: 'website',
       locale: locale === 'fr' ? 'fr_FR' : 'en_GB',
       alternateLocale: locale === 'fr' ? 'en_GB' : 'fr_FR',
-      siteName: 'CARTATTAC',
+      siteName: 'KAMI',
       title: titles[locale] || titles.fr,
       description: descriptions[locale] || descriptions.fr,
     },
@@ -105,7 +119,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${roena.variable} font-sans antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <div className="relative flex min-h-screen flex-col">{children}</div>
           <Toaster />

@@ -30,7 +30,7 @@ function CustomAccordionTrigger({
         {children}
         <span
           className="text-4xl font-normal leading-none transition-transform duration-200"
-          style={{ fontFamily: 'var(--font-montserrat)' }}
+          style={{ fontFamily: 'var(--font-roena)' }}
         >
           <span className="group-data-[state=open]:hidden">+</span>
           <span className="hidden group-data-[state=open]:inline">−</span>
@@ -51,15 +51,8 @@ export function ServicesPageContent() {
     { id: 'authentication', key: 'authentication' },
   ];
 
-  const whyItems = [
-    { id: 'protection', key: 'protection' },
-    { id: 'insurance', key: 'insurance' },
-    { id: 'patrimony', key: 'patrimony' },
-    { id: 'authentication', key: 'authentication' },
-  ];
-
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-1 flex-col bg-[#C5C5FF]">
       {/* Section 1: Nos Services */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-8 md:px-12 lg:px-16">
@@ -68,32 +61,24 @@ export function ServicesPageContent() {
             <div>
               {/* Title */}
               <h1
-                className="relative mb-0 text-4xl font-bold uppercase md:text-5xl lg:text-6xl"
+                className="relative mb-0 break-words text-2xl font-bold uppercase md:text-5xl lg:text-[7rem]"
                 style={{
-                  fontFamily: 'var(--font-montserrat)',
-                  fontWeight: 900,
+                  fontFamily: 'var(--font-roena)',
+                  fontWeight: 400,
                   letterSpacing: '0.02em',
                 }}
               >
-                <span className="relative z-10">N</span>
-                <span className="relative">
-                  <span className="relative z-10">OS SERVICE</span>
-                  <span
-                    className="absolute left-0 top-0 -z-10 h-[120%] w-full"
-                    style={{ backgroundColor: '#87CEEB' }}
-                  />
-                </span>
-                <span className="relative z-10">S</span>
+                NOS SERVICES
               </h1>
 
               {/* Why Choose Us */}
-              <div className="mt-6 rounded-3xl bg-gray-100 p-8 md:p-10">
+              <div className="mt-6 rounded-3xl bg-[#ffd6ea] p-8 md:p-10">
                 <p className="mb-8">
                   <span
                     className="text-2xl font-bold uppercase md:text-3xl"
                     style={{
-                      fontFamily: 'var(--font-montserrat)',
-                      fontWeight: 900,
+                      fontFamily: 'var(--font-poppins)',
+                      fontWeight: 700,
                       letterSpacing: '0.02em',
                     }}
                   >
@@ -105,7 +90,7 @@ export function ServicesPageContent() {
                   {/* Independence */}
                   <p
                     className="text-sm leading-relaxed text-justify"
-                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    style={{ fontFamily: 'var(--font-poppins)' }}
                   >
                     <span className="font-bold">
                       <span className="relative inline-block">
@@ -119,7 +104,7 @@ export function ServicesPageContent() {
                   {/* Objectivity */}
                   <p
                     className="text-sm leading-relaxed text-justify"
-                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    style={{ fontFamily: 'var(--font-poppins)' }}
                   >
                     <span className="font-bold">
                       <span className="relative inline-block">
@@ -133,7 +118,7 @@ export function ServicesPageContent() {
                   {/* Transparency */}
                   <p
                     className="text-sm leading-relaxed text-justify"
-                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    style={{ fontFamily: 'var(--font-poppins)' }}
                   >
                     <span className="font-bold">
                       <span className="relative inline-block">
@@ -147,7 +132,7 @@ export function ServicesPageContent() {
                   {/* Confidentiality */}
                   <p
                     className="text-sm leading-relaxed text-justify"
-                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    style={{ fontFamily: 'var(--font-poppins)' }}
                   >
                     <span className="font-bold">
                       <span className="relative inline-block">
@@ -167,7 +152,7 @@ export function ServicesPageContent() {
               {/* Intro Text */}
               <p
                 className="mb-8 text-sm leading-relaxed text-justify"
-                style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                style={{ fontFamily: 'var(--font-poppins)' }}
               >
                 {t('intro')}
               </p>
@@ -183,8 +168,8 @@ export function ServicesPageContent() {
                     <CustomAccordionTrigger
                       className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                       style={{
-                        fontFamily: 'var(--font-montserrat)',
-                        fontWeight: 900,
+                        fontFamily: 'var(--font-poppins)',
+                        fontWeight: 700,
                         letterSpacing: '0.02em',
                       }}
                     >
@@ -193,7 +178,7 @@ export function ServicesPageContent() {
                     <AccordionContent>
                       <p
                         className="mb-4 text-sm leading-relaxed text-justify"
-                        style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                        style={{ fontFamily: 'var(--font-poppins)' }}
                       >
                         {t(`${service.key}.description`)}
                       </p>
@@ -202,78 +187,12 @@ export function ServicesPageContent() {
                           <li
                             key={index}
                             className="text-sm leading-relaxed"
-                            style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                            style={{ fontFamily: 'var(--font-poppins)' }}
                           >
                             • {detail}
                           </li>
                         ))}
                       </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2: Why Expertise is Essential */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-8 md:px-12 lg:px-16">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-            {/* Left Column */}
-            <div>
-              <h2
-                className="relative mb-0 text-4xl font-bold uppercase md:text-5xl lg:text-6xl"
-                style={{
-                  fontFamily: 'var(--font-montserrat)',
-                  fontWeight: 900,
-                  letterSpacing: '0.02em',
-                }}
-              >
-                <span className="relative z-10">P</span>
-                <span className="relative">
-                  <span className="relative z-10">OURQUOI UN</span>
-                  <span
-                    className="absolute left-0 top-0 -z-10 h-[280%] w-full"
-                    style={{ backgroundColor: '#86efac' }}
-                  />
-                </span>
-                <span className="relative z-10">E</span>
-                <br />
-                <span className="relative z-10">EXPERTISE EST</span>
-                <br />
-                <span className="relative z-10">ESSENTIELLE ?</span>
-              </h2>
-            </div>
-
-            {/* Right Column */}
-            <div>
-              {/* Why Accordion */}
-              <Accordion type="single" collapsible>
-                {whyItems.map((item) => (
-                  <AccordionItem
-                    key={item.id}
-                    value={item.id}
-                    className="border-t-[5px] border-black border-b-0 last:border-b-[5px]"
-                  >
-                    <CustomAccordionTrigger
-                      className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
-                      style={{
-                        fontFamily: 'var(--font-montserrat)',
-                        fontWeight: 900,
-                        letterSpacing: '0.02em',
-                      }}
-                    >
-                      {t(`whyExpertise.${item.key}.title`)}
-                    </CustomAccordionTrigger>
-                    <AccordionContent>
-                      <p
-                        className="text-sm leading-relaxed text-justify"
-                        style={{ fontFamily: '"Courier New", Courier, monospace' }}
-                      >
-                        {t(`whyExpertise.${item.key}.description`)}
-                      </p>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -286,12 +205,12 @@ export function ServicesPageContent() {
                   size="lg"
                   className="min-w-[200px] rounded-full bg-black px-8 py-6 text-base font-bold uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
                   style={{
-                    fontFamily: 'var(--font-montserrat)',
-                    fontWeight: 900,
+                    fontFamily: 'var(--font-poppins)',
+                    fontWeight: 400,
                     letterSpacing: '0.02em',
                   }}
                 >
-                  <Link href="/contact">Commander une expertise</Link>
+                  <Link href="/contact">Nous contacter</Link>
                 </Button>
               </div>
             </div>

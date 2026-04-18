@@ -8,7 +8,7 @@ import { setRequestLocale } from 'next-intl/server';
 export const metadata: Metadata = {
   title: 'À propos',
   description:
-    "Découvrez CARTATTAC, notre histoire, nos valeurs et notre équipe d'experts passionnés par les cartes à collectionner.",
+    "Découvrez KAMI, notre histoire, nos valeurs et notre équipe d'experts passionnés par les cartes à collectionner.",
 };
 
 const values = [
@@ -74,7 +74,7 @@ export default async function AProposPage({
       {/* Hero */}
       <section className="border-b bg-muted/30 py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl">À propos de CARTATTAC</h1>
+          <h1 className="mb-4 text-4xl font-bold md:text-5xl">À propos de KAMI</h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             L'expertise professionnelle au service des collectionneurs et des professionnels.
           </p>
@@ -88,7 +88,7 @@ export default async function AProposPage({
             <h2 className="mb-6 text-3xl font-bold">Notre histoire</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                CARTATTAC est né d'un constat simple : le marché des cartes à collectionner a
+                KAMI est né d'un constat simple : le marché des cartes à collectionner a
                 explosé, mais il manquait un acteur indépendant capable de fournir des expertises
                 fiables et documentées.
               </p>

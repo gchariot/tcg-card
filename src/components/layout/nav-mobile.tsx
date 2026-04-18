@@ -11,6 +11,7 @@ const navItems = [
   { key: 'home', href: '/' },
   { key: 'services', href: '/services' },
   { key: 'methodology', href: '/methodologie' },
+  { key: 'expertise', href: '/expertise' },
   { key: 'prosCollectionneurs', href: '/pros-collectionneurs' },
   { key: 'blog', href: '/blog' },
   { key: 'about', href: '/a-propos' },
@@ -34,10 +35,10 @@ export function NavMobile({ open, onOpenChange }: NavMobileProps) {
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="right" className="w-[300px] sm:w-[350px]">
         <SheetHeader className="text-left">
-          <SheetTitle className="text-xl font-bold">CARTATTAC</SheetTitle>
+          <SheetTitle className="font-heading text-xl font-bold">KAMI</SheetTitle>
         </SheetHeader>
 
-        <nav className="mt-8 flex flex-col gap-2">
+        <nav className="mt-8 flex flex-col gap-2" style={{ fontFamily: 'var(--font-poppins)' }}>
           {navItems.map((item) => {
             const isActive = pathname === item.href;
 

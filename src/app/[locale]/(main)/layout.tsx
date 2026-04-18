@@ -1,4 +1,4 @@
-import { Header, Footer } from '@/components/layout';
+import { Header } from '@/components/layout';
 import { setRequestLocale } from 'next-intl/server';
 
 export default async function MainLayout({
@@ -13,8 +13,7 @@ export default async function MainLayout({
   return (
     <>
       <Header />
-      <main className="flex-1">{children}</main>
-      <Footer />
+      <main className="flex flex-1 flex-col">{children}</main>
     </>
   );
 }

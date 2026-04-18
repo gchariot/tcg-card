@@ -1,4 +1,5 @@
 import { ContactForm } from '@/components/forms';
+import { Footer } from '@/components/layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Clock, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -7,14 +8,14 @@ import { setRequestLocale } from 'next-intl/server';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Contactez CARTATTAC pour une demande de devis ou toute question sur nos services d\'expertise de cartes à collectionner.',
+    'Contactez KAMI pour une demande de devis ou toute question sur nos services d\'expertise de cartes à collectionner.',
 };
 
 const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'contact@cartattac.fr',
+    value: 'contact@kami.fr',
     description: 'Réponse sous 48h',
   },
   {
@@ -95,6 +96,8 @@ export default async function ContactPage({
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

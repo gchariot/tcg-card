@@ -42,8 +42,8 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/" className="text-xl font-bold">
-              CARTATTAC
+            <Link href="/" className="font-heading text-xl font-bold">
+              KAMI
             </Link>
             <p className="text-sm text-muted-foreground">
               {t('description')}
@@ -120,7 +120,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} CARTATTAC. {t('rights')}
+            © {currentYear} KAMI. {t('rights')}
           </p>
           <p className="text-sm text-muted-foreground">
             Multi-TCG : Pokémon • One Piece • Dragon Ball • Magic • Lorcana

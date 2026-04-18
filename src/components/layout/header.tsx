@@ -18,14 +18,14 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold tracking-tight">CARTATTAC</span>
+          <span className="text-xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-poppins)' }}>KAMI</span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex lg:items-center lg:gap-6">
           <NavMain />
           <LanguageSwitcher />
-          <Button asChild>
+          <Button asChild style={{ fontFamily: 'var(--font-poppins)' }}>
             <Link href="/contact">{t('contact')}</Link>
           </Button>
         </div>

@@ -1,12 +1,13 @@
 {
   "metadata": {
-    "title": "CARTATTAC - Professional TCG Card Expertise",
+    "title": "KAMI - Professional TCG Card Expertise",
     "description": "Professional expertise for collectible trading cards. Pokémon, One Piece, Dragon Ball, Magic, Lorcana. Authentication, valuation, insurance."
   },
   "nav": {
     "home": "Home",
     "services": "Services",
     "methodology": "Methodology",
+    "expertise": "Expertise",
     "prosCollectionneurs": "Professionals & Collectors",
     "blog": "Blog",
     "about": "About",
@@ -77,6 +78,7 @@
     },
     "whyExpertise": {
       "title": "Why is expertise essential?",
+      "intro": "Beyond the simple pleasure of collecting, having your cards appraised is an essential step to protect and enhance your assets. Discover the reasons why a professional expertise is indispensable.",
       "protection": {
         "title": "Protection against theft and damage",
         "description": "In case of theft, fire or water damage, documented expertise facilitates compensation and proves the real value of the items."
@@ -127,7 +129,7 @@
       }
     },
     "benefits": {
-      "title": "Why choose CARTATTAC?",
+      "title": "Why choose KAMI?",
       "items": [
         "Rigorous 6-step methodology",
         "Total independence (no card sales)",
@@ -367,12 +369,12 @@
     }
   },
   "about": {
-    "title": "About CARTATTAC",
+    "title": "About KAMI",
     "subtitle": "Professional expertise serving collectors and professionals.",
     "story": {
       "title": "Our Story",
       "paragraphs": [
-        "CARTATTAC was born from a simple observation: the collectible card market has exploded, but there was no independent player capable of providing reliable and documented expertise.",
+        "KAMI was born from a simple observation: the collectible card market has exploded, but there was no independent player capable of providing reliable and documented expertise.",
         "Passionate collectors since childhood, we have seen the market evolve, prices soar, and with them the risks: increasingly sophisticated counterfeits, difficulties insuring collections, complications during successions...",
         "Faced with these challenges, we decided to put our expertise at everyone's service: collectors wishing to protect their assets, insurers needing reliable valuations, notaries managing successions, or auction houses seeking professional estimates.",
         "Our strength? Total independence. We do not buy or sell cards, which guarantees the objectivity of our valuations. Our only interest is to provide you with rigorous and documented expertise."
@@ -434,7 +436,7 @@
       "title": "Contact Information",
       "email": {
         "title": "Email",
-        "value": "contact@cartattac.fr",
+        "value": "contact@kami.fr",
         "description": "Response within 48 hours"
       },
       "hours": {

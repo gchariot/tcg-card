@@ -30,7 +30,7 @@ function CustomAccordionTrigger({
         {children}
         <span
           className="text-4xl font-normal leading-none transition-transform duration-200"
-          style={{ fontFamily: 'var(--font-montserrat)' }}
+          style={{ fontFamily: 'var(--font-roena)' }}
         >
           <span className="group-data-[state=open]:hidden">+</span>
           <span className="hidden group-data-[state=open]:inline">−</span>
@@ -45,7 +45,7 @@ export function ProsCollectionneursContent() {
   const tProfessionals = useTranslations('professionals');
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-1 flex-col bg-[#FFCC99]">
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-8 md:px-12 lg:px-16">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
@@ -53,39 +53,28 @@ export function ProsCollectionneursContent() {
             <div>
               {/* Title */}
               <h1
-                className="relative mb-0 text-4xl font-bold uppercase md:text-5xl lg:text-6xl"
+                className="relative mb-0 break-words text-2xl font-bold uppercase md:text-5xl lg:text-[8rem]"
                 style={{
-                  fontFamily: 'var(--font-montserrat)',
-                  fontWeight: 900,
+                  fontFamily: 'var(--font-roena)',
+                  fontWeight: 400,
                   letterSpacing: '0.02em',
                 }}
               >
-                <span className="relative z-10">P</span>
-                <span className="relative">
-                  <span className="relative z-10">ROFESSIONNEL</span>
-                  <span
-                    className="absolute left-0 top-0 -z-10 h-[280%] w-full"
-                    style={{ backgroundColor: '#87CEEB' }}
-                  />
-                </span>
-                <span className="relative z-10">S &</span>
-                <br />
-                <span className="relative z-10">COLLECTIONNEURS</span>
+                PROS & COLLECTIONNEURS
               </h1>
 
-              {/* Info Box */}
-              <div className="mt-6 rounded-3xl bg-gray-100 p-8 md:p-10">
-                <p
-                  className="text-sm leading-relaxed text-justify"
-                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
-                >
-                  Nous accompagnons aussi bien les collectionneurs et particuliers souhaitant protéger et valoriser leurs cartes que les professionnels nécessitant des évaluations fiables et documentées.
-                </p>
-              </div>
             </div>
 
             {/* Right Column */}
             <div>
+              {/* Intro Text */}
+              <p
+                className="mb-8 text-sm leading-relaxed text-justify"
+                style={{ fontFamily: 'var(--font-poppins)' }}
+              >
+                Nous accompagnons aussi bien les collectionneurs et particuliers souhaitant protéger et valoriser leurs cartes que les professionnels nécessitant des évaluations fiables et documentées.
+              </p>
+
               {/* Accordion Section */}
               <Accordion type="single" collapsible>
             {/* Particuliers et Collectionneurs */}
@@ -96,8 +85,8 @@ export function ProsCollectionneursContent() {
               <CustomAccordionTrigger
                 className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                 style={{
-                  fontFamily: 'var(--font-montserrat)',
-                  fontWeight: 900,
+                  fontFamily: 'var(--font-poppins)',
+                  fontWeight: 700,
                   letterSpacing: '0.02em',
                 }}
               >
@@ -106,32 +95,32 @@ export function ProsCollectionneursContent() {
               <AccordionContent>
                 <p
                   className="mb-4 text-sm leading-relaxed text-justify"
-                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                  style={{ fontFamily: 'var(--font-poppins)' }}
                 >
                   Faites évaluer vos cartes par un expert indépendant pour les assurer, les vendre ou les intégrer à votre patrimoine.
                 </p>
                 <ul className="space-y-2">
                   <li
                     className="text-sm leading-relaxed"
-                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    style={{ fontFamily: 'var(--font-poppins)' }}
                   >
                     • {tIndividuals('useCases.insurance.title')} : {tIndividuals('useCases.insurance.description')}
                   </li>
                   <li
                     className="text-sm leading-relaxed"
-                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    style={{ fontFamily: 'var(--font-poppins)' }}
                   >
                     • {tIndividuals('useCases.damage.title')} : {tIndividuals('useCases.damage.description')}
                   </li>
                   <li
                     className="text-sm leading-relaxed"
-                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    style={{ fontFamily: 'var(--font-poppins)' }}
                   >
                     • {tIndividuals('useCases.patrimony.title')} : {tIndividuals('useCases.patrimony.description')}
                   </li>
                   <li
                     className="text-sm leading-relaxed"
-                    style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                    style={{ fontFamily: 'var(--font-poppins)' }}
                   >
                     • {tIndividuals('useCases.transaction.title')} : {tIndividuals('useCases.transaction.description')}
                   </li>
@@ -147,8 +136,8 @@ export function ProsCollectionneursContent() {
               <CustomAccordionTrigger
                 className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                 style={{
-                  fontFamily: 'var(--font-montserrat)',
-                  fontWeight: 900,
+                  fontFamily: 'var(--font-poppins)',
+                  fontWeight: 700,
                   letterSpacing: '0.02em',
                 }}
               >
@@ -157,7 +146,7 @@ export function ProsCollectionneursContent() {
               <AccordionContent>
                 <p
                   className="mb-4 text-sm leading-relaxed text-justify"
-                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                  style={{ fontFamily: 'var(--font-poppins)' }}
                 >
                   {tProfessionals('domains.insurance.description')}
                 </p>
@@ -166,7 +155,7 @@ export function ProsCollectionneursContent() {
                     <li
                       key={index}
                       className="text-sm leading-relaxed"
-                      style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                      style={{ fontFamily: 'var(--font-poppins)' }}
                     >
                       • {service}
                     </li>
@@ -183,8 +172,8 @@ export function ProsCollectionneursContent() {
               <CustomAccordionTrigger
                 className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                 style={{
-                  fontFamily: 'var(--font-montserrat)',
-                  fontWeight: 900,
+                  fontFamily: 'var(--font-poppins)',
+                  fontWeight: 700,
                   letterSpacing: '0.02em',
                 }}
               >
@@ -193,7 +182,7 @@ export function ProsCollectionneursContent() {
               <AccordionContent>
                 <p
                   className="mb-4 text-sm leading-relaxed text-justify"
-                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                  style={{ fontFamily: 'var(--font-poppins)' }}
                 >
                   {tProfessionals('domains.notary.description')}
                 </p>
@@ -202,7 +191,7 @@ export function ProsCollectionneursContent() {
                     <li
                       key={index}
                       className="text-sm leading-relaxed"
-                      style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                      style={{ fontFamily: 'var(--font-poppins)' }}
                     >
                       • {service}
                     </li>
@@ -219,8 +208,8 @@ export function ProsCollectionneursContent() {
               <CustomAccordionTrigger
                 className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                 style={{
-                  fontFamily: 'var(--font-montserrat)',
-                  fontWeight: 900,
+                  fontFamily: 'var(--font-poppins)',
+                  fontWeight: 700,
                   letterSpacing: '0.02em',
                 }}
               >
@@ -229,7 +218,7 @@ export function ProsCollectionneursContent() {
               <AccordionContent>
                 <p
                   className="mb-4 text-sm leading-relaxed text-justify"
-                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                  style={{ fontFamily: 'var(--font-poppins)' }}
                 >
                   {tProfessionals('domains.auction.description')}
                 </p>
@@ -238,7 +227,7 @@ export function ProsCollectionneursContent() {
                     <li
                       key={index}
                       className="text-sm leading-relaxed"
-                      style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                      style={{ fontFamily: 'var(--font-poppins)' }}
                     >
                       • {service}
                     </li>
@@ -255,8 +244,8 @@ export function ProsCollectionneursContent() {
               <CustomAccordionTrigger
                 className="text-left text-lg font-bold uppercase hover:no-underline md:text-xl"
                 style={{
-                  fontFamily: 'var(--font-montserrat)',
-                  fontWeight: 900,
+                  fontFamily: 'var(--font-poppins)',
+                  fontWeight: 700,
                   letterSpacing: '0.02em',
                 }}
               >
@@ -265,7 +254,7 @@ export function ProsCollectionneursContent() {
               <AccordionContent>
                 <p
                   className="mb-4 text-sm leading-relaxed text-justify"
-                  style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                  style={{ fontFamily: 'var(--font-poppins)' }}
                 >
                   {tProfessionals('domains.shop.description')}
                 </p>
@@ -274,7 +263,7 @@ export function ProsCollectionneursContent() {
                     <li
                       key={index}
                       className="text-sm leading-relaxed"
-                      style={{ fontFamily: '"Courier New", Courier, monospace' }}
+                      style={{ fontFamily: 'var(--font-poppins)' }}
                     >
                       • {service}
                     </li>
@@ -291,8 +280,8 @@ export function ProsCollectionneursContent() {
                   size="lg"
                   className="min-w-[200px] rounded-full bg-black px-8 py-6 text-base font-bold uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
                   style={{
-                    fontFamily: 'var(--font-montserrat)',
-                    fontWeight: 900,
+                    fontFamily: 'var(--font-poppins)',
+                    fontWeight: 400,
                     letterSpacing: '0.02em',
                   }}
                 >

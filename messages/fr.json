@@ -1,12 +1,13 @@
 {
   "metadata": {
-    "title": "CARTATTAC - Expertise professionnelle cartes TCG",
+    "title": "KAMI - Expertise professionnelle cartes TCG",
     "description": "Expertise professionnelle pour cartes à collectionner TCG. Pokémon, One Piece, Dragon Ball, Magic, Lorcana. Authentification, évaluation, assurance."
   },
   "nav": {
     "home": "Accueil",
     "services": "Services",
     "methodology": "Méthodologie",
+    "expertise": "Expertise",
     "prosCollectionneurs": "Professionnels & Collectionneurs",
     "blog": "Blog",
     "about": "À propos",
@@ -77,6 +78,7 @@
     },
     "whyExpertise": {
       "title": "Pourquoi une expertise est essentielle ?",
+      "intro": "Au-delà du simple plaisir de collection, faire expertiser ses cartes est une démarche essentielle pour protéger et valoriser son patrimoine. Découvrez les raisons qui rendent une expertise professionnelle indispensable.",
       "protection": {
         "title": "Protection contre le vol et les sinistres",
         "description": "En cas de vol, incendie ou dégât des eaux, une expertise documentée facilite l'indemnisation et permet de prouver la valeur réelle des biens."
@@ -127,7 +129,7 @@
       }
     },
     "benefits": {
-      "title": "Pourquoi choisir CARTATTAC ?",
+      "title": "Pourquoi choisir KAMI ?",
       "items": [
         "Méthodologie rigoureuse en 6 étapes",
         "Indépendance totale (aucune vente de cartes)",
@@ -367,12 +369,12 @@
     }
   },
   "about": {
-    "title": "À propos de CARTATTAC",
+    "title": "À propos de KAMI",
     "subtitle": "L'expertise professionnelle au service des collectionneurs et des professionnels.",
     "story": {
       "title": "Notre histoire",
       "paragraphs": [
-        "CARTATTAC est né d'un constat simple : le marché des cartes à collectionner a explosé, mais il manquait un acteur indépendant capable de fournir des expertises fiables et documentées.",
+        "KAMI est né d'un constat simple : le marché des cartes à collectionner a explosé, mais il manquait un acteur indépendant capable de fournir des expertises fiables et documentées.",
         "Collectionneurs passionnés depuis notre enfance, nous avons vu le marché évoluer, les prix s'envoler, et avec eux les risques : contrefaçons de plus en plus sophistiquées, difficultés à assurer ses collections, complications lors de successions...",
         "Face à ces enjeux, nous avons décidé de mettre notre expertise au service de tous : collectionneurs souhaitant protéger leur patrimoine, assureurs ayant besoin d'évaluations fiables, notaires gérant des successions, ou encore maisons de vente cherchant des estimations professionnelles.",
         "Notre force ? Une totale indépendance. Nous n'achetons ni ne vendons de cartes, ce qui garantit l'objectivité de nos évaluations. Notre seul intérêt est de vous fournir une expertise rigoureuse et documentée."
@@ -434,7 +436,7 @@
       "title": "Informations de contact",
       "email": {
         "title": "Email",
-        "value": "contact@cartattac.fr",
+        "value": "contact@kami.fr",
         "description": "Réponse sous 48h"
       },
       "hours": {
