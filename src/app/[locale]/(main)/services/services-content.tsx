@@ -42,6 +42,8 @@ function CustomAccordionTrigger({
 
 export function ServicesPageContent() {
   const t = useTranslations('services');
+  const tCommon = useTranslations('common');
+  const pillars = ['independence', 'objectivity', 'transparency', 'confidentiality'] as const;
 
   const services = [
     { id: 'individual', key: 'individual' },
@@ -68,7 +70,7 @@ export function ServicesPageContent() {
                   letterSpacing: '0.02em',
                 }}
               >
-                NOS SERVICES
+                {t('heading')}
               </h1>
 
               {/* Why Choose Us */}
@@ -82,67 +84,26 @@ export function ServicesPageContent() {
                       letterSpacing: '0.02em',
                     }}
                   >
-                    POURQUOI NOUS CHOISIR ?
+                    {t('whyChooseUs')}
                   </span>
                 </p>
 
                 <div className="space-y-6">
-                  {/* Independence */}
-                  <p
-                    className="text-sm leading-relaxed text-justify"
-                    style={{ fontFamily: 'var(--font-poppins)' }}
-                  >
-                    <span className="font-bold">
-                      <span className="relative inline-block">
-                        Indépendance.
-                        <span className="absolute inset-0 -z-10 bg-cyan-300" />
-                      </span>
-                    </span>{' '}
-                    aucun conflit d'intérêt, nous n'achetons ni ne vendons de cartes.
-                  </p>
-
-                  {/* Objectivity */}
-                  <p
-                    className="text-sm leading-relaxed text-justify"
-                    style={{ fontFamily: 'var(--font-poppins)' }}
-                  >
-                    <span className="font-bold">
-                      <span className="relative inline-block">
-                        Objectivité.
-                        <span className="absolute inset-0 -z-10 bg-cyan-300" />
-                      </span>
-                    </span>{' '}
-                    Analyse basée sur des critères mesurables et des données de marché.
-                  </p>
-
-                  {/* Transparency */}
-                  <p
-                    className="text-sm leading-relaxed text-justify"
-                    style={{ fontFamily: 'var(--font-poppins)' }}
-                  >
-                    <span className="font-bold">
-                      <span className="relative inline-block">
-                        Transparence.
-                        <span className="absolute inset-0 -z-10 bg-cyan-300" />
-                      </span>
-                    </span>{' '}
-                    méthodologie documentée et justification de chaque conclusion.
-                  </p>
-
-                  {/* Confidentiality */}
-                  <p
-                    className="text-sm leading-relaxed text-justify"
-                    style={{ fontFamily: 'var(--font-poppins)' }}
-                  >
-                    <span className="font-bold">
-                      <span className="relative inline-block">
-                        Confidentialité.
-                        <span className="absolute inset-0 -z-10 bg-cyan-300" />
-                      </span>
-                    </span>{' '}
-                    vos informations et la composition de votre collection restent strictement
-                    confidentielles.
-                  </p>
+                  {pillars.map((pillar) => (
+                    <p
+                      key={pillar}
+                      className="text-sm leading-relaxed text-justify"
+                      style={{ fontFamily: 'var(--font-poppins)' }}
+                    >
+                      <span className="font-bold">
+                        <span className="relative inline-block">
+                          {t(`pillars.${pillar}.label`)}
+                          <span className="absolute inset-0 -z-10 bg-cyan-300" />
+                        </span>
+                      </span>{' '}
+                      {t(`pillars.${pillar}.description`)}
+                    </p>
+                  ))}
                 </div>
               </div>
             </div>
@@ -210,7 +171,7 @@ export function ServicesPageContent() {
                     letterSpacing: '0.02em',
                   }}
                 >
-                  <Link href="/contact">Nous contacter</Link>
+                  <Link href="/contact">{tCommon('contactUs')}</Link>
                 </Button>
               </div>
             </div>

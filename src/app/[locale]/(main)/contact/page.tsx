@@ -1,30 +1,22 @@
 import { ContactForm } from '@/components/forms';
 import { Footer } from '@/components/layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-export const metadata: Metadata = {
-  title: 'Contact',
-  description:
-    'Contactez KAMI pour une demande de devis ou toute question sur nos services d\'expertise de cartes à collectionner.',
-};
-
-const contactInfo = [
-  {
-    icon: Mail,
-    title: 'Email',
-    value: 'contact@kami.fr',
-    description: 'Réponse sous 48h',
-  },
-  {
-    icon: MapPin,
-    title: 'Zone d\'intervention',
-    value: 'France • Belgique • Suisse',
-    description: 'Déplacement à domicile uniquement',
-  },
-];
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'contact' });
+  return {
+    title: t('title'),
+    description: t('subtitle'),
+  };
+}
 
 export default async function ContactPage({
   params,
@@ -33,6 +25,8 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations('contact');
+
   return (
     <div
       className="flex flex-1 flex-col bg-[#79E8B3]"
@@ -44,53 +38,45 @@ export default async function ContactPage({
             className="mb-4 text-4xl font-bold md:text-5xl"
             style={{ fontFamily: 'var(--font-roena)', fontWeight: 400 }}
           >
-            Contactez-nous
+            {t('title')}
           </h1>
-          <p className="mx-auto max-w-2xl text-lg">
-            Demandez un devis gratuit ou posez-nous vos questions. Nous vous répondons sous 48h.
-          </p>
+          <p className="mx-auto max-w-2xl text-lg">{t('subtitle')}</p>
         </div>
       </section>
 
       <section className="pb-16 md:pb-20">
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-3">
-            {/* Contact Info */}
             <div className="space-y-6">
               <h2
                 className="text-2xl font-bold"
                 style={{ fontFamily: 'var(--font-poppins)' }}
               >
-                Informations de contact
+                {t('info.title')}
               </h2>
-              {contactInfo.map((info) => (
-                <Card key={info.title}>
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                        <info.icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-base">{info.title}</CardTitle>
-                        <CardDescription>{info.description}</CardDescription>
-                      </div>
+              <Card>
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                      <MapPin className="h-5 w-5 text-primary" />
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="font-medium">{info.value}</p>
-                  </CardContent>
-                </Card>
-              ))}
+                    <div>
+                      <CardTitle className="text-base">{t('info.area.title')}</CardTitle>
+                      <CardDescription>{t('info.area.description')}</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-medium">{t('info.area.value')}</p>
+                </CardContent>
+              </Card>
             </div>
 
-            {/* Contact Form */}
             <div className="lg:col-span-2">
               <Card>
                 <CardHeader>
-                  <CardTitle>Prise de contact</CardTitle>
-                  <CardDescription>
-                    Remplissez ce formulaire pour nous joindre. Nous vous répondons sous 48h.
-                  </CardDescription>
+                  <CardTitle>{t('form.title')}</CardTitle>
+                  <CardDescription>{t('form.description')}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ContactForm />

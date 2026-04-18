@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'sonner';
@@ -26,21 +27,18 @@ import {
 import { contactFormSchema, type ContactFormData } from '@/lib/validations/contact';
 import { Loader2, CheckCircle } from 'lucide-react';
 
-const subjectOptions = [
-  { value: 'renseignements', label: 'Demande de renseignements' },
-  { value: 'devis', label: 'Demande de devis' },
-  { value: 'autre', label: 'Autres demandes' },
-];
-
-const professionOptions = [
-  { value: 'assurance', label: 'Assurance / Courtier' },
-  { value: 'notaire', label: 'Notaire / Avocat' },
-  { value: 'vente-encheres', label: 'Maison de vente aux enchères' },
-  { value: 'boutique', label: 'Boutique / Marchand TCG' },
-  { value: 'autre', label: 'Autre' },
-];
+const subjectOptions = ['renseignements', 'devis', 'autre'] as const;
+const professionOptions = ['insurance', 'notary', 'auction', 'shop', 'other'] as const;
+const professionValues: Record<(typeof professionOptions)[number], string> = {
+  insurance: 'assurance',
+  notary: 'notaire',
+  auction: 'vente-encheres',
+  shop: 'boutique',
+  other: 'autre',
+};
 
 export function ContactForm() {
+  const t = useTranslations('contact.form');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -81,9 +79,9 @@ export function ContactForm() {
       }
 
       setIsSubmitted(true);
-      toast.success('Votre demande a été envoyée avec succès !');
+      toast.success(t('toast.success'));
     } catch {
-      toast.error("Une erreur s'est produite. Veuillez réessayer.");
+      toast.error(t('toast.error'));
     } finally {
       setIsSubmitting(false);
     }
@@ -99,11 +97,9 @@ export function ContactForm() {
           className="mb-2 text-xl font-semibold"
           style={{ fontFamily: 'var(--font-poppins)' }}
         >
-          Demande envoyée !
+          {t('success.title')}
         </h3>
-        <p className="text-muted-foreground">
-          Merci pour votre demande. Nous vous recontacterons sous 48h.
-        </p>
+        <p className="text-muted-foreground">{t('success.description')}</p>
       </div>
     );
   }
@@ -111,7 +107,6 @@ export function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        {/* Honeypot - hidden from users */}
         <div className="hidden" aria-hidden="true">
           <FormField
             control={form.control}
@@ -127,22 +122,21 @@ export function ContactForm() {
           />
         </div>
 
-        {/* Type selection */}
         <FormField
           control={form.control}
           name="type"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Vous êtes</FormLabel>
+              <FormLabel>{t('fields.type.label')}</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Sélectionnez votre profil" />
+                    <SelectValue placeholder={t('fields.type.placeholder')} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="particulier">Un particulier</SelectItem>
-                  <SelectItem value="professionnel">Un professionnel</SelectItem>
+                  <SelectItem value="particulier">{t('fields.type.individual')}</SelectItem>
+                  <SelectItem value="professionnel">{t('fields.type.professional')}</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -150,7 +144,6 @@ export function ContactForm() {
           )}
         />
 
-        {/* Professional fields */}
         {watchType === 'professionnel' && (
           <div className="grid gap-4 md:grid-cols-2">
             <FormField
@@ -158,9 +151,9 @@ export function ContactForm() {
               name="company"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Entreprise</FormLabel>
+                  <FormLabel>{t('fields.company.label')}</FormLabel>
                   <FormControl>
-                    <Input placeholder="Nom de l'entreprise" {...field} />
+                    <Input placeholder={t('fields.company.placeholder')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -171,17 +164,17 @@ export function ContactForm() {
               name="profession"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Secteur d'activité</FormLabel>
+                  <FormLabel>{t('fields.profession.label')}</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Sélectionnez" />
+                        <SelectValue placeholder={t('fields.profession.placeholder')} />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {professionOptions.map((option) => (
-                        <SelectItem key={option.value} value={option.value}>
-                          {option.label}
+                      {professionOptions.map((key) => (
+                        <SelectItem key={key} value={professionValues[key]}>
+                          {t(`fields.profession.options.${key}`)}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -193,16 +186,15 @@ export function ContactForm() {
           </div>
         )}
 
-        {/* Name and Email */}
         <div className="grid gap-4 md:grid-cols-2">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Nom</FormLabel>
+                <FormLabel>{t('fields.name.label')}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Votre nom" {...field} />
+                  <Input placeholder={t('fields.name.placeholder')} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -213,9 +205,13 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>{t('fields.email.label')}</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="votre@email.com" {...field} />
+                  <Input
+                    type="email"
+                    placeholder={t('fields.email.placeholder')}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -223,38 +219,40 @@ export function ContactForm() {
           />
         </div>
 
-        {/* Phone */}
         <FormField
           control={form.control}
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Téléphone</FormLabel>
+              <FormLabel>{t('fields.phone.label')}</FormLabel>
               <FormControl>
-                <Input type="tel" placeholder="06 00 00 00 00" {...field} />
+                <Input
+                  type="tel"
+                  placeholder={t('fields.phone.placeholder')}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        {/* Subject */}
         <FormField
           control={form.control}
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Objet</FormLabel>
+              <FormLabel>{t('fields.subject.label')}</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Sélectionnez" />
+                    <SelectValue placeholder={t('fields.subject.placeholder')} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {subjectOptions.map((option) => (
-                    <SelectItem key={option.value} value={option.value}>
-                      {option.label}
+                  {subjectOptions.map((key) => (
+                    <SelectItem key={key} value={key}>
+                      {t(`fields.subject.options.${key}`)}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -264,16 +262,15 @@ export function ContactForm() {
           )}
         />
 
-        {/* Message */}
         <FormField
           control={form.control}
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Votre message</FormLabel>
+              <FormLabel>{t('fields.message.label')}</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Décrivez votre projet ou votre demande..."
+                  placeholder={t('fields.message.placeholder')}
                   className="min-h-[120px]"
                   {...field}
                 />
@@ -283,7 +280,6 @@ export function ContactForm() {
           )}
         />
 
-        {/* Consent */}
         <FormField
           control={form.control}
           name="consent"
@@ -299,9 +295,12 @@ export function ContactForm() {
               </FormControl>
               <div className="space-y-1 leading-none">
                 <FormLabel className="text-sm font-normal">
-                  J'accepte que mes données soient traitées conformément à la{' '}
-                  <Link href="/politique-confidentialite" className="underline hover:text-primary">
-                    politique de confidentialité
+                  {t('fields.consent.label')}{' '}
+                  <Link
+                    href="/politique-confidentialite"
+                    className="underline hover:text-primary"
+                  >
+                    {t('fields.consent.link')}
                   </Link>
                 </FormLabel>
                 <FormMessage />
@@ -310,15 +309,14 @@ export function ContactForm() {
           )}
         />
 
-        {/* Submit */}
         <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Envoi en cours...
+              {t('submitting')}
             </>
           ) : (
-            'Envoyer ma demande'
+            t('submit')
           )}
         </Button>
       </form>

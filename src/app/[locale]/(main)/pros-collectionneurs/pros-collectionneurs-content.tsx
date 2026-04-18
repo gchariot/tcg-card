@@ -43,6 +43,7 @@ function CustomAccordionTrigger({
 export function ProsCollectionneursContent() {
   const tIndividuals = useTranslations('individuals');
   const tProfessionals = useTranslations('professionals');
+  const tCommon = useTranslations('common');
 
   return (
     <div className="flex flex-1 flex-col bg-[#FFCC99]">
@@ -285,7 +286,7 @@ export function ProsCollectionneursContent() {
                     letterSpacing: '0.02em',
                   }}
                 >
-                  <Link href="/contact">Commander une expertise</Link>
+                  <Link href="/contact">{tCommon('orderExpertise')}</Link>
                 </Button>
               </div>
             </div>

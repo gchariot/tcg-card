@@ -82,7 +82,7 @@ export function MethodologyPageContent() {
                   letterSpacing: '0.02em',
                 }}
               >
-                MÉTHODOLOGIE
+                {t('heading')}
               </h1>
 
               {/* Why Choose Us */}
@@ -96,7 +96,7 @@ export function MethodologyPageContent() {
                       letterSpacing: '0.02em',
                     }}
                   >
-                    NOS ENGAGEMENTS
+                    {t('commitmentsHeading')}
                   </span>
                 </p>
 

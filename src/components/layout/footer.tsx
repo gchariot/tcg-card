@@ -143,9 +143,7 @@ export function Footer() {
           <p className="text-sm text-white/70">
             © {currentYear} KAMI. {t('rights')}
           </p>
-          <p className="text-sm text-white/70">
-            Multi-TCG : Pokémon • One Piece • Dragon Ball • Magic • Lorcana
-          </p>
+          <p className="text-sm text-white/70">{t('tagline')}</p>
         </div>
       </div>
     </footer>

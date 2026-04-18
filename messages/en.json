@@ -27,6 +27,26 @@
   "services": {
     "title": "Our Services",
     "subtitle": "Services tailored to collectors and professionals alike.",
+    "heading": "OUR SERVICES",
+    "whyChooseUs": "WHY CHOOSE US?",
+    "pillars": {
+      "independence": {
+        "label": "Independence.",
+        "description": "no conflict of interest — we neither buy nor sell cards."
+      },
+      "objectivity": {
+        "label": "Objectivity.",
+        "description": "Analysis based on measurable criteria and market data."
+      },
+      "transparency": {
+        "label": "Transparency.",
+        "description": "documented methodology and justification for every conclusion."
+      },
+      "confidentiality": {
+        "label": "Confidentiality.",
+        "description": "your information and the contents of your collection remain strictly confidential."
+      }
+    },
     "intro": "We offer expertise services adapted to both individual collectors and market professionals. Each intervention aims to confirm the authenticity of cards, guarantee their authenticity and provide reliable and documented evaluations.",
     "individual": {
       "title": "Individual Card Expertise",
@@ -79,6 +99,7 @@
       ]
     },
     "whyExpertise": {
+      "heading": "WHY AN EXPERTISE",
       "title": "Why is expertise essential?",
       "intro": "Beyond the simple pleasure of collecting, having your cards appraised is an essential step to protect and enhance your assets. Discover the reasons why a professional expertise is indispensable.",
       "protection": {
@@ -264,6 +285,8 @@
   },
   "methodology": {
     "title": "Our Methodology",
+    "heading": "METHODOLOGY",
+    "commitmentsHeading": "OUR COMMITMENTS",
     "subtitle": "A rigorous 6-step approach for reliable and documented expertise of your collectible cards.",
     "steps": {
       "identification": {
@@ -436,25 +459,15 @@
     "subtitle": "Request a free quote or ask us your questions. We respond within 48 hours.",
     "info": {
       "title": "Contact Information",
-      "email": {
-        "title": "Email",
-        "value": "contact@kami.fr",
-        "description": "Response within 48 hours"
-      },
-      "hours": {
-        "title": "Hours",
-        "value": "Mon - Fri: 9am - 6pm",
-        "description": "Excluding public holidays"
-      },
       "area": {
         "title": "Service Area",
-        "value": "Entire France",
-        "description": "Travel or secure shipping"
+        "value": "France • Belgium • Switzerland",
+        "description": "Home visit only"
       }
     },
     "form": {
-      "title": "Quote Request",
-      "description": "Fill out this form to receive a free personalized quote with no obligation.",
+      "title": "Get in touch",
+      "description": "Fill out this form to reach us. We respond within 48 hours.",
       "fields": {
         "type": {
           "label": "You are",
@@ -487,47 +500,19 @@
         },
         "phone": {
           "label": "Phone",
-          "placeholder": "06 00 00 00 00",
-          "description": "Optional, for quick callback"
+          "placeholder": "06 00 00 00 00"
         },
-        "service": {
-          "label": "Desired Service",
+        "subject": {
+          "label": "Subject",
           "placeholder": "Select",
           "options": {
-            "individual": "Individual Card Expertise",
-            "inventory": "Collection Inventory and Valuation",
-            "insurance": "Insurance Valuation",
-            "damage": "Post-Damage Expertise",
-            "authentication": "Authentication",
-            "other": "Other request"
-          }
-        },
-        "tcg": {
-          "label": "TCG Concerned",
-          "placeholder": "Select",
-          "options": {
-            "pokemon": "Pokémon",
-            "onepiece": "One Piece",
-            "dragonball": "Dragon Ball",
-            "magic": "Magic: The Gathering",
-            "lorcana": "Disney Lorcana",
-            "multiple": "Multiple TCGs",
-            "other": "Other"
-          }
-        },
-        "volume": {
-          "label": "Estimated Volume",
-          "placeholder": "Select",
-          "options": {
-            "1-5": "1 to 5 cards",
-            "6-20": "6 to 20 cards",
-            "21-100": "21 to 100 cards",
-            "100+": "More than 100 cards",
-            "collection": "Complete collection"
+            "renseignements": "General inquiry",
+            "devis": "Quote request",
+            "autre": "Other request"
           }
         },
         "message": {
-          "label": "Your Message",
+          "label": "Your message",
           "placeholder": "Describe your project or request..."
         },
         "consent": {
@@ -541,13 +526,15 @@
         "title": "Request sent!",
         "description": "Thank you for your request. We will contact you within 48 hours."
       },
+      "toast": {
+        "success": "Your request was sent successfully!",
+        "error": "An error occurred. Please try again."
+      },
       "errors": {
         "name": "Name must contain at least 2 characters",
         "email": "Invalid email",
         "type": "Please select a type",
-        "tcg": "Please select a TCG",
-        "volume": "Please estimate the volume",
-        "service": "Please select a service",
+        "subject": "Please select a subject",
         "message": "Message must contain at least 10 characters",
         "consent": "You must accept the privacy policy"
       }
@@ -561,11 +548,13 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "followUs": "Follow Us",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "tagline": "Multi-TCG: Pokémon • One Piece • Dragon Ball • Magic • Lorcana"
   },
   "common": {
     "learnMore": "Learn more",
     "requestQuote": "Request a quote",
-    "contactUs": "Contact us"
+    "contactUs": "Contact us",
+    "orderExpertise": "Order an expertise"
   }
 }

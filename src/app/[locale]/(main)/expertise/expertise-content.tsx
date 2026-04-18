@@ -42,6 +42,7 @@ function CustomAccordionTrigger({
 
 export function ExpertiseContent() {
   const t = useTranslations('services');
+  const tCommon = useTranslations('common');
 
   const whyItems = [
     { id: 'protection', key: 'protection' },
@@ -66,7 +67,7 @@ export function ExpertiseContent() {
                   letterSpacing: '0.02em',
                 }}
               >
-                POURQUOI UNE EXPERTISE
+                {t('whyExpertise.heading')}
               </h1>
             </div>
 
@@ -122,7 +123,7 @@ export function ExpertiseContent() {
                     letterSpacing: '0.02em',
                   }}
                 >
-                  <Link href="/contact">Commander une expertise</Link>
+                  <Link href="/contact">{tCommon('orderExpertise')}</Link>
                 </Button>
               </div>
             </div>
