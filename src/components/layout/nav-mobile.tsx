@@ -65,7 +65,7 @@ export function NavMobile({ open, onOpenChange }: NavMobileProps) {
         <div className="px-4">
           <Button asChild className="w-full">
             <Link href="/contact" onClick={handleLinkClick}>
-              {tCommon('requestQuote')}
+              {tCommon('contactUs')}
             </Link>
           </Button>
         </div>
