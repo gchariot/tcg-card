@@ -20,24 +20,9 @@ export const contactFormSchema = z.object({
   company: z.string().optional(),
   profession: z.enum(['assurance', 'notaire', 'vente-encheres', 'boutique', 'autre']).optional(),
 
-  // TCG and details
-  tcg: z.enum(['pokemon', 'onepiece', 'dragonball', 'magic', 'lorcana', 'autre', 'multiple'], {
-    message: 'Veuillez sélectionner un TCG',
-  }),
-  volume: z.enum(['1-5', '6-20', '21-100', '100+', 'collection'], {
-    message: 'Veuillez estimer le volume',
-  }),
-
-  // Service type
-  service: z.enum([
-    'expertise-individuelle',
-    'inventaire-collection',
-    'evaluation-assurance',
-    'expertise-sinistre',
-    'authentification',
-    'autre',
-  ], {
-    message: 'Veuillez sélectionner un service',
+  // Subject
+  subject: z.enum(['renseignements', 'devis', 'autre'], {
+    message: 'Veuillez sélectionner un objet',
   }),
 
   // Message

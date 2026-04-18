@@ -1,7 +1,7 @@
 import { ContactForm } from '@/components/forms';
 import { Footer } from '@/components/layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Clock, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
@@ -19,16 +19,10 @@ const contactInfo = [
     description: 'Réponse sous 48h',
   },
   {
-    icon: Clock,
-    title: 'Horaires',
-    value: 'Lun - Ven : 9h - 18h',
-    description: 'Hors jours fériés',
-  },
-  {
     icon: MapPin,
     title: 'Zone d\'intervention',
-    value: 'France entière',
-    description: 'Déplacement ou envoi sécurisé',
+    value: 'France • Belgique • Suisse',
+    description: 'Déplacement à domicile uniquement',
   },
 ];
 
@@ -40,9 +34,11 @@ export default async function ContactPage({
   const { locale } = await params;
   setRequestLocale(locale);
   return (
-    <div className="flex flex-col" style={{ fontFamily: 'var(--font-poppins)' }}>
-      {/* Hero */}
-      <section className="border-b bg-muted/30 py-16 md:py-24">
+    <div
+      className="flex flex-1 flex-col bg-[#79E8B3]"
+      style={{ fontFamily: 'var(--font-poppins)' }}
+    >
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 text-center">
           <h1
             className="mb-4 text-4xl font-bold md:text-5xl"
@@ -50,14 +46,13 @@ export default async function ContactPage({
           >
             Contactez-nous
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto max-w-2xl text-lg">
             Demandez un devis gratuit ou posez-nous vos questions. Nous vous répondons sous 48h.
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 md:py-24">
+      <section className="pb-16 md:pb-20">
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-3">
             {/* Contact Info */}
@@ -92,10 +87,9 @@ export default async function ContactPage({
             <div className="lg:col-span-2">
               <Card>
                 <CardHeader>
-                  <CardTitle>Demande de devis</CardTitle>
+                  <CardTitle>Prise de contact</CardTitle>
                   <CardDescription>
-                    Remplissez ce formulaire pour recevoir un devis personnalisé gratuit et sans
-                    engagement.
+                    Remplissez ce formulaire pour nous joindre. Nous vous répondons sous 48h.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

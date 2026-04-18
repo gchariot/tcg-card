@@ -11,7 +11,6 @@ import { Textarea } from '@/components/ui/textarea';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -27,31 +26,10 @@ import {
 import { contactFormSchema, type ContactFormData } from '@/lib/validations/contact';
 import { Loader2, CheckCircle } from 'lucide-react';
 
-const tcgOptions = [
-  { value: 'pokemon', label: 'Pokémon' },
-  { value: 'onepiece', label: 'One Piece' },
-  { value: 'dragonball', label: 'Dragon Ball' },
-  { value: 'magic', label: 'Magic: The Gathering' },
-  { value: 'lorcana', label: 'Disney Lorcana' },
-  { value: 'multiple', label: 'Plusieurs TCG' },
-  { value: 'autre', label: 'Autre' },
-];
-
-const volumeOptions = [
-  { value: '1-5', label: '1 à 5 cartes' },
-  { value: '6-20', label: '6 à 20 cartes' },
-  { value: '21-100', label: '21 à 100 cartes' },
-  { value: '100+', label: 'Plus de 100 cartes' },
-  { value: 'collection', label: 'Collection complète' },
-];
-
-const serviceOptions = [
-  { value: 'expertise-individuelle', label: 'Expertise de carte individuelle' },
-  { value: 'inventaire-collection', label: 'Inventaire et valorisation de collection' },
-  { value: 'evaluation-assurance', label: 'Évaluation pour assurance' },
-  { value: 'expertise-sinistre', label: 'Expertise après sinistre' },
-  { value: 'authentification', label: 'Authentification' },
-  { value: 'autre', label: 'Autre demande' },
+const subjectOptions = [
+  { value: 'renseignements', label: 'Demande de renseignements' },
+  { value: 'devis', label: 'Demande de devis' },
+  { value: 'autre', label: 'Autres demandes' },
 ];
 
 const professionOptions = [
@@ -76,9 +54,7 @@ export function ContactForm() {
       type: undefined,
       company: '',
       profession: undefined,
-      tcg: undefined,
-      volume: undefined,
-      service: undefined,
+      subject: undefined,
       message: '',
       consent: false,
     },
@@ -87,7 +63,6 @@ export function ContactForm() {
   const watchType = form.watch('type');
 
   async function onSubmit(data: ContactFormData) {
-    // Honeypot check
     if (data.website) {
       return;
     }
@@ -95,11 +70,16 @@ export function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // TODO: Implement actual form submission with Resend
-      // For now, simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
 
-      console.log('Form data:', data);
+      if (!res.ok) {
+        throw new Error('Send failed');
+      }
+
       setIsSubmitted(true);
       toast.success('Votre demande a été envoyée avec succès !');
     } catch {
@@ -148,7 +128,7 @@ export function ContactForm() {
           name="type"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Vous êtes *</FormLabel>
+              <FormLabel>Vous êtes</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
@@ -215,7 +195,7 @@ export function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Nom *</FormLabel>
+                <FormLabel>Nom</FormLabel>
                 <FormControl>
                   <Input placeholder="Votre nom" {...field} />
                 </FormControl>
@@ -228,7 +208,7 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email *</FormLabel>
+                <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input type="email" placeholder="votre@email.com" {...field} />
                 </FormControl>
@@ -248,87 +228,36 @@ export function ContactForm() {
               <FormControl>
                 <Input type="tel" placeholder="06 00 00 00 00" {...field} />
               </FormControl>
-              <FormDescription>Optionnel, pour un rappel rapide</FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        {/* Service, TCG, Volume */}
-        <div className="grid gap-4 md:grid-cols-3">
-          <FormField
-            control={form.control}
-            name="service"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Service souhaité *</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Sélectionnez" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {serviceOptions.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="tcg"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>TCG concerné *</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Sélectionnez" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {tcgOptions.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="volume"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Volume estimé *</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Sélectionnez" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {volumeOptions.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
+        {/* Subject */}
+        <FormField
+          control={form.control}
+          name="subject"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Objet</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Sélectionnez" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {subjectOptions.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>
+                      {option.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
         {/* Message */}
         <FormField
@@ -336,7 +265,7 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Votre message *</FormLabel>
+              <FormLabel>Votre message</FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Décrivez votre projet ou votre demande..."
@@ -368,8 +297,7 @@ export function ContactForm() {
                   J'accepte que mes données soient traitées conformément à la{' '}
                   <Link href="/politique-confidentialite" className="underline hover:text-primary">
                     politique de confidentialité
-                  </Link>{' '}
-                  *
+                  </Link>
                 </FormLabel>
                 <FormMessage />
               </div>

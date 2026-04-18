@@ -38,7 +38,7 @@ export function Footer() {
 
   return (
     <footer
-      className="border-t bg-muted/40"
+      className="bg-black text-white"
       style={{ fontFamily: 'var(--font-poppins)' }}
     >
       <div className="container mx-auto px-4 py-12">
@@ -52,7 +52,7 @@ export function Footer() {
             >
               KAMI
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-white/70">
               {t('description')}
             </p>
             <div className="flex gap-4">
@@ -62,7 +62,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-white/70 transition-colors hover:text-white"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />
@@ -84,7 +84,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-white/70 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -106,7 +106,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-white/70 transition-colors hover:text-white"
                   >
                     {tNav(link.key)}
                   </Link>
@@ -128,7 +128,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-white/70 transition-colors hover:text-white"
                   >
                     {t(link.key)}
                   </Link>
@@ -138,13 +138,13 @@ export function Footer() {
           </div>
         </div>
 
-        <Separator className="my-8" />
+        <Separator className="my-8 bg-white/20" />
 
         <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-white/70">
             © {currentYear} KAMI. {t('rights')}
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-white/70">
             Multi-TCG : Pokémon • One Piece • Dragon Ball • Magic • Lorcana
           </p>
         </div>
