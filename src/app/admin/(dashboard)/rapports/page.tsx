@@ -11,7 +11,7 @@ export default async function RapportsListPage() {
   const { data: reports, error } = await supabaseAdmin
     .from('reports')
     .select(
-      'id, created_at, admin_email, report_number, client, subject, final_estimate, photoRecto:data->photoRecto'
+      'id, created_at, admin_email, report_number, client, subject, final_estimate, photoRecto:data->photoRecto, card_name:data->>cardName, card_set:data->>set'
     )
     .order('created_at', { ascending: false })
     .limit(100);
