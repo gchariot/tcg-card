@@ -23,11 +23,11 @@ function HomePageContent() {
   return (
     <div className="flex min-h-[calc(100vh-4rem)] flex-col">
       {/* Hero Section */}
-      <section className="flex flex-1 flex-col items-center justify-center px-4 py-16">
+      <section className="flex flex-1 flex-col items-center justify-center px-4 py-8 md:py-16">
         <div className="mx-auto w-full max-w-6xl text-center">
           {/* Main Title */}
           <h1
-            className="mb-8 text-4xl font-black uppercase md:text-6xl lg:text-8xl"
+            className="mb-6 break-words text-3xl font-black uppercase md:mb-8 md:text-6xl lg:text-8xl"
             style={{
               fontFamily: 'var(--font-roena)',
               fontWeight: 400,
