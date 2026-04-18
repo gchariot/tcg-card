@@ -75,7 +75,7 @@ export function MethodologyPageContent() {
             <div>
               {/* Title */}
               <h1
-                className="relative mb-0 break-words text-2xl font-bold uppercase md:text-5xl lg:text-[8rem]"
+                className="relative mb-0 break-words text-5xl font-bold uppercase md:text-6xl lg:text-[8rem]"
                 style={{
                   fontFamily: 'var(--font-roena)',
                   fontWeight: 400,

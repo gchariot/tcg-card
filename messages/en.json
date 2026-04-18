@@ -160,7 +160,7 @@
     "benefits": {
       "title": "Why choose KAMI?",
       "items": [
-        "Rigorous 6-step methodology",
+        "Rigorous 7-step methodology",
         "Total independence (no card sales)",
         "Detailed documented report",
         "Multi-TCG expertise (Pokémon, One Piece, Dragon Ball, Magic, Lorcana)",
@@ -173,7 +173,7 @@
       "items": [
         {
           "question": "How does an expertise work?",
-          "answer": "The expertise follows our 6-step methodology: card identification, authentication, condition evaluation, rarity analysis, market analysis, and value determination. You receive a complete report at the end of the process."
+          "answer": "The expertise follows our 7-step methodology: card identification, authentication, condition evaluation, rarity analysis, market analysis, and value determination. You receive a complete report at the end of the process."
         },
         {
           "question": "How many cards can I have appraised?",
@@ -276,7 +276,7 @@
       "title": "Our Guarantees",
       "items": [
         "Total independence: no conflict of interest (no card sales)",
-        "Rigorous and documented 6-step methodology",
+        "Rigorous and documented 7-step methodology",
         "Expertise based on updated market data",
         "Absolute confidentiality of information",
         "Intervention deadlines adapted to your constraints",
@@ -294,7 +294,7 @@
     "heading": "METHODOLOGY",
     "commitmentsHeading": "OUR COMMITMENTS",
     "deliverablesHeading": "OUR DELIVERABLES",
-    "subtitle": "A rigorous 6-step approach for reliable and documented expertise of your collectible cards.",
+    "subtitle": "A rigorous 7-step approach for reliable and documented expertise of your collectible cards.",
     "steps": {
       "identification": {
         "title": "Identification",
@@ -420,7 +420,7 @@
       },
       "rigor": {
         "title": "Rigor",
-        "description": "Our 6-step methodology guarantees a complete and documented analysis of each appraised card."
+        "description": "Our 7-step methodology guarantees a complete and documented analysis of each appraised card."
       },
       "transparency": {
         "title": "Transparency",
