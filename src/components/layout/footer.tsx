@@ -37,12 +37,19 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t bg-muted/40">
+    <footer
+      className="border-t bg-muted/40"
+      style={{ fontFamily: 'var(--font-poppins)' }}
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/" className="font-heading text-xl font-bold">
+            <Link
+              href="/"
+              className="text-xl font-bold"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
               KAMI
             </Link>
             <p className="text-sm text-muted-foreground">
@@ -66,7 +73,12 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">{tNav('services')}</h3>
+            <h3
+              className="mb-4 text-sm font-semibold"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              {tNav('services')}
+            </h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
@@ -83,7 +95,12 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">{t('navigation')}</h3>
+            <h3
+              className="mb-4 text-sm font-semibold"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              {t('navigation')}
+            </h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
@@ -100,7 +117,12 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">{t('legal')}</h3>
+            <h3
+              className="mb-4 text-sm font-semibold"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              {t('legal')}
+            </h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.href}>

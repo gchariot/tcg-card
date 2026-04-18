@@ -14,34 +14,11 @@ export default async function HomePage({
   return <HomePageContent />;
 }
 
-const TITLE_COLORS = [
-  '#FFD2EA',
-  '#FFC2DF',
-  '#FFA4D4',
-  '#FFCC99',
-  '#FFE98A',
-  '#79E8B3',
-  '#B3FFC7',
-  '#BBEFFF',
-  '#99E2FF',
-  '#80B1FF',
-  '#C5C5FF',
-  '#A4A4F4',
-];
-
 function HomePageContent() {
   const t = useTranslations('home');
 
   const title = t('mainTitle');
   const chars = [...title];
-  const letterIndices = chars
-    .map((c, i) => (c === ' ' ? -1 : i))
-    .filter((i) => i !== -1);
-  const shuffled = [...letterIndices].sort(() => Math.random() - 0.5);
-  const colorByIndex = new Map<number, string>();
-  shuffled.forEach((idx, k) => {
-    if (k < TITLE_COLORS.length) colorByIndex.set(idx, TITLE_COLORS[k]);
-  });
 
   return (
     <div className="flex min-h-[calc(100vh-4rem)] flex-col">
@@ -67,12 +44,7 @@ function HomePageContent() {
                   }
                   return <span key={i}>{'\u00A0'}</span>;
                 }
-                const color = colorByIndex.get(i) ?? '#000000';
-                return (
-                  <span key={i} style={{ color }}>
-                    {char}
-                  </span>
-                );
+                return <span key={i}>{char}</span>;
               });
             })()}
           </h1>
@@ -94,19 +66,31 @@ function HomePageContent() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-6">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-3 lg:gap-4">
             <Button
               asChild
-              size="lg"
-              className="min-w-[200px] rounded-full bg-[#C5C5FF] px-8 py-6 text-base font-black uppercase text-black hover:bg-[#C5C5FF]/80 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
+              className="h-auto rounded-full bg-[#C5C5FF] px-4 py-2.5 text-xs font-black uppercase text-black hover:bg-[#C5C5FF]/80 md:px-5 md:py-3 md:text-sm lg:px-6 lg:py-3.5 lg:text-base"
               style={{ fontFamily: 'var(--font-poppins)' }}
             >
               <Link href="/services">{t('cta.services')}</Link>
             </Button>
             <Button
               asChild
-              size="lg"
-              className="min-w-[200px] rounded-full bg-[#FFCC99] px-8 py-6 text-base font-black uppercase text-black hover:bg-[#FFCC99]/80 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
+              className="h-auto rounded-full bg-[#B3FFC7] px-4 py-2.5 text-xs font-black uppercase text-black hover:bg-[#B3FFC7]/80 md:px-5 md:py-3 md:text-sm lg:px-6 lg:py-3.5 lg:text-base"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              <Link href="/methodologie">{t('cta.methodology')}</Link>
+            </Button>
+            <Button
+              asChild
+              className="h-auto rounded-full bg-[#BED6FF] px-4 py-2.5 text-xs font-black uppercase text-black hover:bg-[#BED6FF]/80 md:px-5 md:py-3 md:text-sm lg:px-6 lg:py-3.5 lg:text-base"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              <Link href="/expertise">{t('cta.whyExpertise')}</Link>
+            </Button>
+            <Button
+              asChild
+              className="h-auto rounded-full bg-[#FFCC99] px-4 py-2.5 text-xs font-black uppercase text-black hover:bg-[#FFCC99]/80 md:px-5 md:py-3 md:text-sm lg:px-6 lg:py-3.5 lg:text-base"
               style={{ fontFamily: 'var(--font-poppins)' }}
             >
               <Link href="/pros-collectionneurs">{t('cta.expertises')}</Link>

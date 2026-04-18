@@ -40,11 +40,16 @@ export default async function ContactPage({
   const { locale } = await params;
   setRequestLocale(locale);
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col" style={{ fontFamily: 'var(--font-poppins)' }}>
       {/* Hero */}
       <section className="border-b bg-muted/30 py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl">Contactez-nous</h1>
+          <h1
+            className="mb-4 text-4xl font-bold md:text-5xl"
+            style={{ fontFamily: 'var(--font-roena)', fontWeight: 400 }}
+          >
+            Contactez-nous
+          </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Demandez un devis gratuit ou posez-nous vos questions. Nous vous répondons sous 48h.
           </p>
@@ -57,7 +62,12 @@ export default async function ContactPage({
           <div className="grid gap-12 lg:grid-cols-3">
             {/* Contact Info */}
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold">Informations de contact</h2>
+              <h2
+                className="text-2xl font-bold"
+                style={{ fontFamily: 'var(--font-poppins)' }}
+              >
+                Informations de contact
+              </h2>
               {contactInfo.map((info) => (
                 <Card key={info.title}>
                   <CardHeader className="pb-2">

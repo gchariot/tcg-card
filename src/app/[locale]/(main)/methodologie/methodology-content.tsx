@@ -22,7 +22,7 @@ function CustomAccordionTrigger({
     <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
         className={cn(
-          'group flex flex-1 items-center justify-between py-2 text-left transition-all outline-none',
+          'group flex flex-1 items-center justify-between py-4 text-left transition-all outline-none',
           className
         )}
         {...props}
@@ -68,9 +68,9 @@ export function MethodologyPageContent() {
   return (
     <div className="flex flex-1 flex-col bg-[#B3FFC7]">
       {/* Section 1: Méthodologie */}
-      <section className="flex flex-1 items-center py-6 md:py-8">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-8 md:px-12 lg:px-16">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
             {/* Left Column */}
             <div>
               {/* Title */}
@@ -86,8 +86,8 @@ export function MethodologyPageContent() {
               </h1>
 
               {/* Why Choose Us */}
-              <div className="mt-4 rounded-3xl bg-[#fff4c2] p-6 md:p-8">
-                <p className="mb-4">
+              <div className="mt-6 rounded-3xl bg-[#fff4c2] p-8 md:p-10">
+                <p className="mb-8">
                   <span
                     className="text-2xl font-bold uppercase md:text-3xl"
                     style={{
@@ -100,7 +100,7 @@ export function MethodologyPageContent() {
                   </span>
                 </p>
 
-                <div className="space-y-3">
+                <div className="space-y-6">
                   {commitments.map((commitment) => (
                     <p
                       key={commitment.id}
@@ -124,7 +124,7 @@ export function MethodologyPageContent() {
             <div>
               {/* Intro Text */}
               <p
-                className="mb-4 text-sm leading-relaxed text-justify"
+                className="mb-8 text-sm leading-relaxed text-justify"
                 style={{ fontFamily: 'var(--font-poppins)' }}
               >
                 {t('subtitle')}
@@ -213,11 +213,11 @@ export function MethodologyPageContent() {
               </Accordion>
 
               {/* CTA Button */}
-              <div className="mt-6 flex justify-end">
+              <div className="mt-12 flex justify-end">
                 <Button
                   asChild
                   size="lg"
-                  className="min-w-[200px] rounded-full bg-black px-8 py-4 text-base font-bold uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-5 md:text-lg"
+                  className="min-w-[200px] rounded-full bg-black px-8 py-6 text-base font-bold uppercase text-white hover:bg-black/90 md:min-w-[280px] md:px-10 md:py-7 md:text-lg"
                   style={{
                     fontFamily: 'var(--font-poppins)',
                     fontWeight: 400,
