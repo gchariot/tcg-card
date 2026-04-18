@@ -1,12 +1,20 @@
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
-import { ArrowLeft, Pencil } from 'lucide-react';
+import { ArrowLeft, Download, Pencil } from 'lucide-react';
 import { auth } from '@/auth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { supabaseAdmin } from '@/lib/supabase/server';
 import type { ReportFormData } from '@/lib/validations/report';
 import { DeleteButton } from './delete-button';
+
+const liquidityLabels: Record<string, string> = {
+  'tres-haute': 'Très haute',
+  haute: 'Haute',
+  moyenne: 'Moyenne',
+  faible: 'Faible',
+  'tres-faible': 'Très faible',
+};
 
 export const dynamic = 'force-dynamic';
 
@@ -79,6 +87,11 @@ export default async function ReportDetailPage({
           <ArrowLeft className="mr-1 h-4 w-4" /> Retour
         </Link>
         <div className="flex gap-2">
+          <Button asChild variant="outline">
+            <a href={`/api/reports/${id}/pdf`} target="_blank" rel="noreferrer">
+              <Download className="mr-2 h-4 w-4" /> PDF
+            </a>
+          </Button>
           <Button asChild variant="outline">
             <Link href={`/admin/rapports/${id}/modifier`}>
               <Pencil className="mr-2 h-4 w-4" /> Modifier
@@ -192,7 +205,7 @@ export default async function ReportDetailPage({
           label="Valeur de liquidation"
           value={d.liquidationValue != null ? `${d.liquidationValue} €` : ''}
         />
-        <Row label="Liquidité" value={d.liquidity} />
+        <Row label="Liquidité" value={d.liquidity ? liquidityLabels[d.liquidity] : ''} />
         <Row label="Commentaire" value={d.financialComment} />
         <Row
           label="Estimation finale"

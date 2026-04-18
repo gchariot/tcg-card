@@ -70,6 +70,14 @@ export async function PUT(
   }
 }
 
+function extractStoragePath(url: string | undefined | null): string | null {
+  if (!url) return null;
+  const marker = '/storage/v1/object/public/reports/';
+  const idx = url.indexOf(marker);
+  if (idx === -1) return null;
+  return url.slice(idx + marker.length);
+}
+
 export async function DELETE(
   _request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -80,11 +88,49 @@ export async function DELETE(
   }
 
   const { id } = await params;
+
+  const { data: report, error: fetchError } = await supabaseAdmin
+    .from('reports')
+    .select('data')
+    .eq('id', id)
+    .single();
+
+  if (fetchError || !report) {
+    return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  }
+
+  const d = report.data as {
+    photoRecto?: string[];
+    photoVerso?: string[];
+    photoDefauts?: string[];
+    transactions?: { photo?: string }[];
+  };
+
+  const urls = [
+    ...(d.photoRecto ?? []),
+    ...(d.photoVerso ?? []),
+    ...(d.photoDefauts ?? []),
+    ...((d.transactions ?? []).map((t) => t.photo).filter(Boolean) as string[]),
+  ];
+
+  const paths = urls
+    .map(extractStoragePath)
+    .filter((p): p is string => p !== null);
+
+  if (paths.length > 0) {
+    const { error: storageError } = await supabaseAdmin.storage
+      .from('reports')
+      .remove(paths);
+    if (storageError) {
+      console.error('[report] storage delete error:', storageError);
+    }
+  }
+
   const { error } = await supabaseAdmin.from('reports').delete().eq('id', id);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json({ success: true, deletedPhotos: paths.length });
 }
