@@ -14,7 +14,6 @@ const navItems = [
   { key: 'expertise', href: '/expertise' },
   { key: 'prosCollectionneurs', href: '/pros-collectionneurs' },
   { key: 'blog', href: '/blog' },
-  { key: 'about', href: '/a-propos' },
 ] as const;
 
 interface NavMobileProps {

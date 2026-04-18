@@ -95,7 +95,12 @@ export function ContactForm() {
         <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
           <CheckCircle className="h-8 w-8 text-primary" />
         </div>
-        <h3 className="mb-2 text-xl font-semibold">Demande envoyée !</h3>
+        <h3
+          className="mb-2 text-xl font-semibold"
+          style={{ fontFamily: 'var(--font-poppins)' }}
+        >
+          Demande envoyée !
+        </h3>
         <p className="text-muted-foreground">
           Merci pour votre demande. Nous vous recontacterons sous 48h.
         </p>

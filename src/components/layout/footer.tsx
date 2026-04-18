@@ -25,7 +25,6 @@ export function Footer() {
       { label: 'Authentification', href: '/services#authentification' },
     ],
     company: [
-      { key: 'about', href: '/a-propos' },
       { key: 'methodology', href: '/methodologie' },
       { key: 'blog', href: '/blog' },
       { key: 'contact', href: '/contact' },

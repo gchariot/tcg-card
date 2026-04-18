@@ -3,34 +3,6 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
-import { Inter, Montserrat, Poppins } from 'next/font/google';
-import localFont from 'next/font/local';
-import '../globals.css';
-import { Toaster } from '@/components/ui/sonner';
-
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-});
-
-const montserrat = Montserrat({
-  variable: '--font-montserrat',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-});
-
-const poppins = Poppins({
-  variable: '--font-poppins',
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-});
-
-const roena = localFont({
-  src: '../../../public/fonts/Roena-Demo.otf',
-  variable: '--font-roena',
-  display: 'swap',
-});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -118,13 +90,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${roena.variable} font-sans antialiased`}>
-        <NextIntlClientProvider messages={messages}>
-          <div className="relative flex min-h-screen flex-col">{children}</div>
-          <Toaster />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <div className="relative flex min-h-screen flex-col">{children}</div>
+    </NextIntlClientProvider>
   );
 }
