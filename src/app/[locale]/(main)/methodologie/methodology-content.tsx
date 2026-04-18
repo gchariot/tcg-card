@@ -183,7 +183,7 @@ export function MethodologyPageContent() {
                       letterSpacing: '0.02em',
                     }}
                   >
-                    7. NOS LIVRABLES
+                    7. {t('deliverablesHeading')}
                   </CustomAccordionTrigger>
                   <AccordionContent>
                     <div className="space-y-6">

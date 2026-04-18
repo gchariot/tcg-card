@@ -128,6 +128,12 @@
   "individuals": {
     "title": "Expertise for Collectors",
     "subtitle": "Are you a collector or investor? Have your cards evaluated by an independent expert for insurance, sale or asset integration.",
+    "pageTitle": "PROS & COLLECTORS",
+    "pageIntro": "We support both collectors and individuals looking to protect and value their cards, and professionals requiring reliable, documented valuations.",
+    "collectorsAccordion": {
+      "title": "INDIVIDUALS & COLLECTORS",
+      "intro": "Have your cards appraised by an independent expert to insure them, sell them, or include them in your estate."
+    },
     "useCases": {
       "title": "When should you contact us?",
       "insurance": {
@@ -287,6 +293,7 @@
     "title": "Our Methodology",
     "heading": "METHODOLOGY",
     "commitmentsHeading": "OUR COMMITMENTS",
+    "deliverablesHeading": "OUR DELIVERABLES",
     "subtitle": "A rigorous 6-step approach for reliable and documented expertise of your collectible cards.",
     "steps": {
       "identification": {
@@ -372,19 +379,19 @@
       "title": "Our Commitments",
       "independence": {
         "title": "Independence",
-        "description": "No conflict of interest: we do not buy or sell cards."
+        "description": "No conflict of interest: we neither buy nor sell cards. Our sole aim is to provide objective expertise, free from commercial influence, to protect your interests and guarantee reliable valuations."
       },
       "objectivity": {
         "title": "Objectivity",
-        "description": "Analysis based on measurable criteria and market data."
+        "description": "Analysis based on measurable criteria and up-to-date market data. Each valuation relies on verified comparables, recognized standards and a rigorous methodology to guarantee the accuracy of our estimates."
       },
       "transparency": {
         "title": "Transparency",
-        "description": "Documented methodology and justification of each conclusion."
+        "description": "Documented methodology and detailed justification for every conclusion. You understand exactly how we reach our valuations, with a complete report explaining our approach and sources."
       },
       "confidentiality": {
         "title": "Confidentiality",
-        "description": "Your information and collection composition remain strictly confidential."
+        "description": "Your information and the contents of your collection remain strictly confidential. We respect our clients' privacy and guarantee full protection of the sensitive data entrusted to us."
       }
     },
     "cta": {

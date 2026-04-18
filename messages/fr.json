@@ -128,6 +128,12 @@
   "individuals": {
     "title": "Expertise pour collectionneurs",
     "subtitle": "Vous êtes collectionneur ou investisseur ? Faites évaluer vos cartes par un expert indépendant pour les assurer, les vendre ou les intégrer à votre patrimoine.",
+    "pageTitle": "PROS & COLLECTIONNEURS",
+    "pageIntro": "Nous accompagnons aussi bien les collectionneurs et particuliers souhaitant protéger et valoriser leurs cartes que les professionnels nécessitant des évaluations fiables et documentées.",
+    "collectorsAccordion": {
+      "title": "PARTICULIERS ET COLLECTIONNEURS",
+      "intro": "Faites évaluer vos cartes par un expert indépendant pour les assurer, les vendre ou les intégrer à votre patrimoine."
+    },
     "useCases": {
       "title": "Dans quels cas faire appel à nous ?",
       "insurance": {
@@ -154,7 +160,7 @@
     "benefits": {
       "title": "Pourquoi choisir KAMI ?",
       "items": [
-        "Méthodologie rigoureuse en 6 étapes",
+        "Méthodologie rigoureuse en 7 étapes",
         "Indépendance totale (aucune vente de cartes)",
         "Rapport détaillé et documenté",
         "Expertise multi-TCG (Pokémon, One Piece, Dragon Ball, Magic, Lorcana)",
@@ -167,7 +173,7 @@
       "items": [
         {
           "question": "Comment se déroule une expertise ?",
-          "answer": "L'expertise suit notre méthodologie en 6 étapes : identification de la carte, authentification, évaluation de l'état, analyse de la rareté, analyse du marché, et détermination des valeurs. Vous recevez un rapport complet à l'issue du processus."
+          "answer": "L'expertise suit notre méthodologie en 7 étapes : identification de la carte, authentification, évaluation de l'état, analyse de la rareté, analyse du marché, et détermination des valeurs. Vous recevez un rapport complet à l'issue du processus."
         },
         {
           "question": "Combien de cartes puis-je faire expertiser ?",
@@ -270,7 +276,7 @@
       "title": "Nos garanties",
       "items": [
         "Indépendance totale : aucun conflit d'intérêt (pas de vente de cartes)",
-        "Méthodologie rigoureuse et documentée en 6 étapes",
+        "Méthodologie rigoureuse et documentée en 7 étapes",
         "Expertise basée sur les données de marché actualisées",
         "Confidentialité absolue des informations",
         "Délais d'intervention adaptés à vos contraintes",
@@ -287,7 +293,8 @@
     "title": "Méthodologie",
     "heading": "MÉTHODOLOGIE",
     "commitmentsHeading": "NOS ENGAGEMENTS",
-    "subtitle": "Une approche rigoureuse en 6 étapes pour une expertise fiable et documentée de vos cartes à collectionner.",
+    "deliverablesHeading": "NOS LIVRABLES",
+    "subtitle": "Une approche rigoureuse en 7 étapes pour une expertise fiable et documentée de vos cartes à collectionner.",
     "steps": {
       "identification": {
         "title": "Identification",
@@ -413,7 +420,7 @@
       },
       "rigor": {
         "title": "Rigueur",
-        "description": "Notre méthodologie en 6 étapes garantit une analyse complète et documentée de chaque carte expertisée."
+        "description": "Notre méthodologie en 7 étapes garantit une analyse complète et documentée de chaque carte expertisée."
       },
       "transparency": {
         "title": "Transparence",

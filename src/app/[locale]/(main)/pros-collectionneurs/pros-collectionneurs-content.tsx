@@ -61,7 +61,7 @@ export function ProsCollectionneursContent() {
                   letterSpacing: '0.02em',
                 }}
               >
-                PROS & COLLECTIONNEURS
+                {tIndividuals('pageTitle')}
               </h1>
 
             </div>
@@ -73,7 +73,7 @@ export function ProsCollectionneursContent() {
                 className="mb-8 text-sm leading-relaxed text-justify"
                 style={{ fontFamily: 'var(--font-poppins)' }}
               >
-                Nous accompagnons aussi bien les collectionneurs et particuliers souhaitant protéger et valoriser leurs cartes que les professionnels nécessitant des évaluations fiables et documentées.
+                {tIndividuals('pageIntro')}
               </p>
 
               {/* Accordion Section */}
@@ -91,14 +91,14 @@ export function ProsCollectionneursContent() {
                   letterSpacing: '0.02em',
                 }}
               >
-                PARTICULIERS ET COLLECTIONNEURS
+                {tIndividuals('collectorsAccordion.title')}
               </CustomAccordionTrigger>
               <AccordionContent>
                 <p
                   className="mb-4 text-sm leading-relaxed text-justify"
                   style={{ fontFamily: 'var(--font-poppins)' }}
                 >
-                  Faites évaluer vos cartes par un expert indépendant pour les assurer, les vendre ou les intégrer à votre patrimoine.
+                  {tIndividuals('collectorsAccordion.intro')}
                 </p>
                 <ul className="space-y-2">
                   <li
