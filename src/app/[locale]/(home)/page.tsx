@@ -27,7 +27,7 @@ function HomePageContent() {
         <div className="mx-auto w-full max-w-6xl text-center">
           {/* Main Title */}
           <h1
-            className="mb-8 text-xl font-black uppercase md:text-3xl lg:text-8xl"
+            className="mb-8 text-4xl font-black uppercase md:text-6xl lg:text-8xl"
             style={{
               fontFamily: 'var(--font-roena)',
               fontWeight: 400,
