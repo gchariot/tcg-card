@@ -41,7 +41,7 @@ export async function generateMetadata({
     ],
     authors: [{ name: 'KAMI' }],
     creator: 'KAMI',
-    metadataBase: new URL('https://kami.fr'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://cartattac.fr'),
     alternates: {
       canonical: `/${locale}`,
       languages: {

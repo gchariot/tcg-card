@@ -11,6 +11,9 @@ export default async function AdminDashboardPage() {
   const { count } = await supabaseAdmin
     .from('reports')
     .select('*', { count: 'exact', head: true });
+  const { count: blogCount } = await supabaseAdmin
+    .from('blog_posts')
+    .select('*', { count: 'exact', head: true });
 
   return (
     <div className="space-y-6">
@@ -46,18 +49,25 @@ export default async function AdminDashboardPage() {
           </Card>
         </Link>
 
-        <Card className="h-full opacity-60">
-          <CardHeader className="flex flex-row items-center gap-3">
-            <Newspaper className="h-6 w-6 text-muted-foreground" />
-            <div>
-              <CardTitle>Articles blog</CardTitle>
-              <CardDescription>Rédiger et publier (à venir)</CardDescription>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">Fonctionnalité en développement.</p>
-          </CardContent>
-        </Card>
+        <Link href="/admin/blog" className="group">
+          <Card className="h-full transition-colors group-hover:border-black">
+            <CardHeader className="flex flex-row items-center gap-3">
+              <Newspaper className="h-6 w-6 text-muted-foreground" />
+              <div className="flex-1">
+                <CardTitle>Articles blog</CardTitle>
+                <CardDescription>Rédiger, publier et gérer</CardDescription>
+              </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-3xl font-semibold">{blogCount ?? 0}</div>
+              <p className="mt-1 text-sm text-muted-foreground">
+                article{(blogCount ?? 0) > 1 ? 's' : ''} enregistré
+                {(blogCount ?? 0) > 1 ? 's' : ''}
+              </p>
+            </CardContent>
+          </Card>
+        </Link>
       </div>
     </div>
   );
