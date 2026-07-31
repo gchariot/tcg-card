@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { LangSync } from '@/components/lang-sync';
 import type { Metadata } from 'next';
 
 export function generateStaticParams() {
@@ -42,13 +43,6 @@ export async function generateMetadata({
     authors: [{ name: 'KAMI' }],
     creator: 'KAMI',
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://kami.expert'),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        fr: '/fr',
-        en: '/en',
-      },
-    },
     openGraph: {
       type: 'website',
       locale: locale === 'fr' ? 'fr_FR' : 'en_GB',
@@ -94,6 +88,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <LangSync locale={locale} />
       <div className="relative flex min-h-screen flex-col">{children}</div>
     </NextIntlClientProvider>
   );

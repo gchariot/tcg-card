@@ -33,18 +33,19 @@ export async function generateMetadata({
 
   const title = post.meta_title || post.title;
   const description =
-    post.meta_description || post.excerpt || `${post.title} — Blog Cartattac.`;
+    post.meta_description || post.excerpt || `${post.title} — Blog KAMI.`;
   const image = post.og_image_url || post.cover_image_url || undefined;
+  const prefix = locale === 'fr' ? '' : `/${locale}`;
 
   return {
     title,
     description,
-    alternates: { canonical: `/blog/${post.slug}` },
+    alternates: { canonical: `${prefix}/blog/${post.slug}` },
     openGraph: {
       type: 'article',
       title,
       description,
-      url: `${SITE_URL}/blog/${post.slug}`,
+      url: `${SITE_URL}${prefix}/blog/${post.slug}`,
       publishedTime: post.published_at ?? undefined,
       modifiedTime: post.updated_at,
       authors: post.author_name ? [post.author_name] : undefined,
@@ -71,6 +72,7 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const related = await getRelatedPosts(locale, post.id, post.category);
+  const prefix = locale === 'fr' ? '' : `/${locale}`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -82,15 +84,15 @@ export default async function BlogPostPage({
     dateModified: post.updated_at,
     author: {
       '@type': 'Organization',
-      name: post.author_name || 'Cartattac',
+      name: post.author_name || 'KAMI',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Cartattac',
+      name: 'KAMI',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${SITE_URL}/blog/${post.slug}`,
+      '@id': `${SITE_URL}${prefix}/blog/${post.slug}`,
     },
   };
 

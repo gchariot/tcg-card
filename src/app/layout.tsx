@@ -25,7 +25,7 @@ const roena = localFont({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <body
         className={`${montserrat.variable} ${poppins.variable} ${roena.variable} font-sans antialiased`}
       >

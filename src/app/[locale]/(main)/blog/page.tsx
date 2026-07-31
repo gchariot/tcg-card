@@ -1,17 +1,25 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
+import { pageAlternates } from '@/lib/seo';
 import { getPublishedPosts } from '@/lib/blog';
 import { blogCategoryLabels } from '@/lib/validations/blog';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Blog',
-  description:
-    "Actualités, guides et analyses du marché des cartes à collectionner TCG : Pokémon, One Piece, Dragon Ball, Magic, Lorcana. Conseils d'experts par KAMI / Cartattac.",
-  alternates: { canonical: '/blog' },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: 'Blog',
+    description:
+      "Actualités, guides et analyses du marché des cartes à collectionner TCG : Pokémon, One Piece, Dragon Ball, Magic, Lorcana. Conseils d'experts par KAMI.",
+    alternates: pageAlternates(locale, '/blog'),
+  };
+}
 
 function formatDate(iso: string | null): string {
   if (!iso) return '';

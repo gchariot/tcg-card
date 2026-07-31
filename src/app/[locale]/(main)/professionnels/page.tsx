@@ -12,13 +12,22 @@ import {
   Shield,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { pageAlternates } from '@/lib/seo';
 import { setRequestLocale } from 'next-intl/server';
 
-export const metadata: Metadata = {
-  title: 'Professionnels',
-  description:
-    "Services d'expertise pour assurances, notaires, maisons de vente et boutiques spécialisées. Évaluations fiables et documentées.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: 'Professionnels',
+    description:
+      "Services d'expertise pour assurances, notaires, maisons de vente et boutiques spécialisées. Évaluations fiables et documentées.",
+    alternates: pageAlternates(locale, '/professionnels'),
+  };
+}
 
 const professionals = [
   {
