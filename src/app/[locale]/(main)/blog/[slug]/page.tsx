@@ -8,7 +8,7 @@ import { blogCategoryLabels } from '@/lib/validations/blog';
 
 export const dynamic = 'force-dynamic';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cartattac.fr';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kami.expert';
 
 function formatDate(iso: string | null): string {
   if (!iso) return '';

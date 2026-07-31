@@ -358,7 +358,7 @@ export function BlogEditor({
           </div>
           <div className="truncate text-sm text-[#1a0dab]">{metaTitlePreview}</div>
           <div className="text-xs text-[#006621]">
-            cartattac.fr › blog › {slug || 'slug'}
+            kami.expert › blog › {slug || 'slug'}
           </div>
           <div className="line-clamp-2 text-sm text-[#545454]">{metaDescPreview}</div>
         </div>

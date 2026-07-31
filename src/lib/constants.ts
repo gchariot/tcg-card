@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'KAMI',
   description: 'Expertise professionnelle pour cartes à collectionner TCG',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://kami.fr',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://kami.expert',
   locale: 'fr',
   locales: ['fr', 'en'] as const,
 } as const;
