@@ -29,7 +29,11 @@ export async function POST(request: Request) {
 
     const { error: uploadError } = await supabaseAdmin.storage
       .from('reports')
-      .upload(path, file, { contentType: file.type, upsert: false });
+      .upload(path, file, {
+        contentType: file.type,
+        upsert: false,
+        cacheControl: '31536000',
+      });
 
     if (uploadError) {
       console.error('[upload] storage error:', uploadError);
